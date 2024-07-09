@@ -4,7 +4,7 @@
 <script>
 // import
  export default {
-   name: '',
+   name: 'header-vue',
    props: [],
    components: {},
    data() {

@@ -4,7 +4,7 @@
 <script>
 // import
  export default {
-   name: '',
+   name: 'footer-vue',
    props: [],
    components: {},
    data() {

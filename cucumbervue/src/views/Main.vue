@@ -1,14 +1,20 @@
 <template>
-  <div></div>
+  <div>
+     <footer-vue>footer</footer-vue>
+    <header-vue>header</header-vue>
+
+  </div>
+
+
 </template>
 <script>
- import footer from '@/components/Footer.vue'
- import header from '@/components/Header.vue'
+ import HeaderVue from '@/components/Header.vue'
+ import FooterVue from "@/components/Footer.vue";
 
  export default {
-   name: '',
+   name: 'main-vue',
    props: [],
-   components: {},
+   components: {FooterVue, HeaderVue},
    data() {
      return {
        sampleData: ''
