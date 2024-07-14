@@ -3,15 +3,24 @@
     <div class="footer-content">
       <div class="footer-links">
         <a href="#">중고거래</a>
-        <a href="#">동네업체</a>
+        <a href="#">당근비즈니스</a>
         <a href="#">자주 묻는 질문</a>
-        <a href="#">동네생활</a>
+        <a href="#">동네업체</a>
         <a href="#">채팅하기</a>
         <a href="#">회사 소개</a>
+        <a href="#">당근알바</a>
+        <a href="#">인재 채용</a>
+        <a href="#">부동산</a>
+        <a href="#">중고차 직거래</a>
+        <a href="#">제휴 문의</a>
+        <a href="#">광고 문의</a>
+        <a href="#">PR 문의</a>
+        <a href="#">IR 문의</a>
         <a href="#">이용약관</a>
         <a href="#">개인정보처리방침</a>
+        <a href="#">운영정책</a>
         <a href="#">위치기반서비스 이용약관</a>
-        <a href="#">공동명의 브랜드 가이드</a>
+        <a href="#">이용자보호 비전과 계획</a>
         <a href="#">청소년보호정책</a>
       </div>
       <div class="footer-icons">
