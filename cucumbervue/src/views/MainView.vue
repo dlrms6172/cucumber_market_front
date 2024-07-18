@@ -143,27 +143,79 @@ export default {
 </script>
 
 <style scoped>
-header, footer {
+section,header, footer {
   background-color: #f8f9fa;
   padding: 1rem;
-  text-align: center;
+  text-align: left;
+  display: block;
+}
+div {
+  display: block;
+  unicode-bidi: isolate;
+}
+#rebranded-home-main-section-top {
+  padding-top: 24px;
+  background-color: #FFFAE0;
+}
+#rebranded-home-main-section-top .home-main-title {
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 73px;
+  padding-top: 200px;
+  margin-bottom: 3.2rem;
+  letter-spacing: -2%;
+}
+#rebranded-home-main-section-top .service-desc {
+  font-weight: 400;
+  font-size: 20px;
+  color: #7c7c7c;
+  line-height: 30px;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
+
+.rebranded-home-main-section .home-main-content {
+  width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.rebranded-home-main-section .home-main-image-01 {
+  background-size: 655px 750px;
+  width: 655px;
+  height: 750px;
+}
+.rebranded-home-main-section .home-main-image-02 {
+  background-size: 655px 750px;
+  width: 650px;
+  height: 750px;
+}
+#rebranded-home-main-section-top .home-main-image-top {
+  position: absolute;
+  right: -84px;
+  bottom: 0;
+  width: 655px;
+  height: 800px;
+  background-color: #FFFAE0;
+  background-repeat: no-repeat;
+  background-size: 804px 685px;
+}
+#rebranded-home-main-section-top #home-main-top {
+  width: 1024px;
+  height: 760px;
+  margin: 0 auto;
+  position: relative;
+  background-color: #FFFAE0;
 }
 
-nav ul li {
-  display: inline;
-  margin-right: 10px;
+.rebranded-home-main-section .home-main-image-04 {
+  background-size: 655px 750px;
+  width: 650px;
+  height: 750px;
 }
-
-.feature {
-  margin-top: 20px;
-}
-
-.intro, .features {
-  text-align: center;
+.rebranded-home-main-section .home-main-image-03 {
+  background-size: 655px 750px;
+  width: 650px;
+  height: 750px;
 }
 </style>

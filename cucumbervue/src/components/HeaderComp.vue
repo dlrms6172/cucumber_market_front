@@ -80,5 +80,18 @@ button {
 button:hover {
   background-color: #f0f0f0;
 }
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+#gnb-root ._1knjz490 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100vw;
+  z-index: 999;
+}
 </style>
 
