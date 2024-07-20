@@ -4,7 +4,7 @@
         <div class="about-body">
             <p class="about-font1">이웃과 더 가까워지는<br> 따뜻한 동네를 만들어요</p>
 
-            <img src="../assets/About/aboutview1.jpg" class="about-pho1-img">
+            <img src="/images/About/aboutview1.jpg" class="about-pho1-img">
 
             <p class="about-font2">우리 동네 이웃 5명 중 3명은 당근으로 이웃과 함께하고<br> 있습니다. 중고 직거래로 시작한 당근은 이웃과 이웃, 흩어져<br> 있던 정보를 연결하며
                 세상에 없던 지역 기반 커뮤니티<br> 서비스를 만들어 나가고 있어요.</p>
@@ -20,7 +20,7 @@
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     <div class="col">
                         <div class="card border-light mb-3">
-                            <img src="../assets/About/aboutview2.jpg" class="card-img-top" alt="...">
+                            <img src="/images/About/aboutview2.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title-1">전단지를 대체할 당근 광고의 등장</h5>
                                 <p class="card-text-1">당근 광고실을 소개합니다!</p>
@@ -29,7 +29,7 @@
                     </div>
                     <div class="col">
                         <div class="card border-light mb-3">
-                            <img src="../assets/About/aboutview3.jpg" class="card-img-top" alt="...">
+                            <img src="/images/About/aboutview3.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <p class="card-title-1">혹시...? 네, '당근'입니다!</p>
                                 <p class="card-text-1">당근마켓에서 당근으로, 리브랜딩에 대한 모든 것</p>
@@ -41,7 +41,7 @@
 
             <div class="about-culture">
                 <div style="float: right">
-                    <img src="../assets/About/aboutview4.jpg" />
+                    <img src="/images/About/aboutview4.jpg" />
                 </div>
 
                 <div>
@@ -52,7 +52,7 @@
             </div>
         </div>
 
-        <img src="../assets/About/aboutview5.jpg" alt="pho5" class="about-pho5-img">
+        <img src="/images/About/aboutview5.jpg" alt="pho5" class="about-pho5-img">
 
         <div class="about-center">
             <p class="about-font6">당근 팀 이야기가 더 궁금하다면</p>
