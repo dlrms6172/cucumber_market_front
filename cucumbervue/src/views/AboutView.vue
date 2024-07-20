@@ -1,0 +1,180 @@
+<template>
+    <div id="app">
+        <AboutHeader></AboutHeader>
+        <div class="about-body">
+            <p class="about-font1">이웃과 더 가까워지는<br> 따뜻한 동네를 만들어요</p>
+
+            <img src="../assets/About/aboutview1.jpg" class="about-pho1-img">
+
+            <p class="about-font2">우리 동네 이웃 5명 중 3명은 당근으로 이웃과 함께하고<br> 있습니다. 중고 직거래로 시작한 당근은 이웃과 이웃, 흩어져<br> 있던 정보를 연결하며
+                세상에 없던 지역 기반 커뮤니티<br> 서비스를 만들어 나가고 있어요.</p>
+
+            <div class="about-center">
+                <p class="about-font3">당근이 일하는 방식</p>
+                <p class="about-font4">사용자 가치를 가장 중요하게<br> 생각해요</p>
+                <p class="about-font5">좋은 서비스에 대한 답은 항상 사용자에게 있어요. 오래<br> 고민하는 대신 빠르게 실험하며 사용자를 위한 서비스를<br> 만들어요.</p>
+            </div>
+
+            <!-- card부분 그림자, 옆으로 넘어가는 버튼 넣어야함 -->
+            <div class="about-card">
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <div class="card border-light mb-3">
+                            <img src="../assets/About/aboutview2.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title-1">전단지를 대체할 당근 광고의 등장</h5>
+                                <p class="card-text-1">당근 광고실을 소개합니다!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card border-light mb-3">
+                            <img src="../assets/About/aboutview3.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-title-1">혹시...? 네, '당근'입니다!</p>
+                                <p class="card-text-1">당근마켓에서 당근으로, 리브랜딩에 대한 모든 것</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-culture">
+                <div style="float: right">
+                    <img src="../assets/About/aboutview4.jpg" />
+                </div>
+
+                <div>
+                    <p class="about-font3">당근이 일하는 문화</p>
+                    <p class="about-font1">함께의 가치를 만드는<br>사람들은 어떤 문화에서<br> 일할까요?</p>
+                    <p class="about-font3">자세히 보기</p>
+                </div>
+            </div>
+        </div>
+
+        <img src="../assets/About/aboutview5.jpg" alt="pho5" class="about-pho5-img">
+
+        <div class="about-center">
+            <p class="about-font6">당근 팀 이야기가 더 궁금하다면</p>
+            <p class="about-font3">블로그 글 보러가기</p>
+        </div>
+
+        <p>당근과 함께 성장해보세요</p>
+        <p>채용공고 보러가기</p>
+
+        <AboutFooter></AboutFooter>
+    </div>
+</template>
+
+<script>
+import { ref } from 'vue'
+import AboutHeader from './About/AboutHeader.vue';
+import AboutFooter from './About/AboutFooter.vue';
+
+export default {
+    name: 'AboutView',
+    components: { AboutFooter, AboutHeader },
+    setup() {
+        const state = ref({
+            message: 'Hello Vue 3!'
+        });
+
+
+        return {
+            state
+        };
+    }
+}
+</script>
+
+<style>
+.about-body {
+    padding: 50px;
+    text-align: left;
+}
+
+.about-font1 {
+    padding-top: 100px;
+    font-weight: bold;
+    font-size: 52px;
+}
+
+.about-pho1-img {
+    width: 1160px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 30px;
+    margin-top: 50px;
+}
+
+.about-font2 {
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 60px;
+}
+
+.about-center {
+    text-align: center;
+    margin-top: 150px;
+    padding: 15px;
+}
+
+.about-font3 {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.about-font4 {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.about-font5 {
+    color: gray;
+    font-size: 20px;
+}
+
+.about-font6 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.col {
+    z-index: -1;
+}
+
+.card-body {
+    margin: 20px;
+}
+
+.card-title-1 {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.card-text-1 {
+    margin-top: 10px;
+}
+
+.about-card {
+    margin-top: 50px;
+}
+
+.about-culture {
+    margin-top: 120px;
+}
+
+.about-pho6-img {
+    float: right;
+    clear: both;
+}
+
+.about-culture {
+    margin-top: 30px;
+}
+
+.about-pho5-img {
+    margin-top: 150px;
+    width: 100%;
+}
+</style>

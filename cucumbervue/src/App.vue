@@ -1,16 +1,15 @@
 <template>
-  <main-view>welcome</main-view>
+  <nav>
+    <router-link to="/"></router-link>
+    <router-link to="/about"></router-link>
+  </nav>
+  <main>
+    <router-view></router-view>
+  </main>
 </template>
 
 <script>
-import MainView from './views/MainView.vue'
 
-export default {
-  name: 'App',
-  components: {
-    MainView
-  }
-}
 </script>
 
 <style>

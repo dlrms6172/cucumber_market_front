@@ -44,8 +44,7 @@
               <ul class="_1trxeqsa">
                 <li class="_1trxeqsq"><a class="undefined _1trxeqsp" target="_blank"
                                          href="https://cs.kr.karrotmarket.com/wv/faqs">자주 묻는 질문</a></li>
-                <li class="_1trxeqsq"><a class="undefined _1trxeqsp" target="_blank" href="https://about.daangn.com/">회사
-                  소개</a></li>
+                <li class="_1trxeqsq"><router-link to="/about">회사소개</router-link></li>
                 <li class="_1trxeqsq"><a class="undefined _1trxeqsp" target="_blank"
                                          href="https://about.daangn.com/jobs">인재 채용</a></li>
               </ul>
