@@ -6,10 +6,10 @@
             </a>
             <ul class="nav justify-content-end">
                 <li class="nav-item ">
-                    <router-link to="/" class="link-offset-2 link-underline link-underline-opacity-0">회사소개</router-link>
+                    <router-link to="/company" class="link-offset-2 link-underline link-underline-opacity-0">회사소개</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/" class="link-offset-2 link-underline link-underline-opacity-0">팀문화</router-link>
+                    <router-link to="/culture" class="link-offset-2 link-underline link-underline-opacity-0">팀문화</router-link>
                 </li>
                 <li class="nav-item">
                     <router-link to="/" class="link-offset-2 link-underline link-underline-opacity-0">서비스</router-link>

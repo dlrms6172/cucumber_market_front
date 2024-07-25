@@ -11,12 +11,27 @@ const routes = [
         path: '/about',
         name: 'about',
         component: () => import("../views/AboutView.vue"),
-    }
+    },
+    {
+        path: '/company',
+        name: 'company',
+        component: () => import("../views/CompanyView.vue"),
+    },
+    
+    {
+        path: '/culture',
+        name: 'culture',
+        component: () => import("../views/CultureView.vue"),
+    },
 ]
 
 const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),
-    routes
-})
+    routes,
+    scrollBehavior(){
+        return { top: 0 }
+        
+    },
+});
 
 export default router

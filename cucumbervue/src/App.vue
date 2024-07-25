@@ -2,6 +2,8 @@
   <nav>
     <router-link to="/"></router-link>
     <router-link to="/about"></router-link>
+    <router-link to="/company"></router-link>
+    <router-link to="/culture"></router-link>
   </nav>
   <main>
     <router-view></router-view>

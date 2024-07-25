@@ -52,18 +52,32 @@
             </div>
         </div>
 
+
         <img src="/images/About/aboutview5.jpg" alt="pho5" class="about-pho5-img">
 
-        <div class="about-center">
+
+        <div class="about-blog">
             <p class="about-font6">당근 팀 이야기가 더 궁금하다면</p>
             <p class="about-font3">블로그 글 보러가기</p>
         </div>
 
-        <p>당근과 함께 성장해보세요</p>
-        <p>채용공고 보러가기</p>
+        <div class="user-wrap">
+            <div class="user-image">
+                <img src="/images/About/aboutview7.png" alt="pho7">
+            </div>
+            <div class="user-text">
+                <p class="about-font6">당근과 함께 성장해보세요</p>
+                <p class="about-font3">채용공고 보러가기</p>
+            </div>
+        </div>
+
+
+
+
 
         <AboutFooter></AboutFooter>
     </div>
+
 </template>
 
 <script>
@@ -176,5 +190,29 @@ export default {
 .about-pho5-img {
     margin-top: 150px;
     width: 100%;
+}
+
+.user-wrap {
+    width: 100%;
+    position: relative;
+}
+
+.user-wrap img {
+    width: 100%;
+    vertical-align: middle;
+    margin-top: 150px;
+}
+
+.user-text {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    text-align: center;
+}
+.about-blog {
+    margin-top: 140px;
 }
 </style>
