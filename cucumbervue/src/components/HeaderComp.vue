@@ -12,7 +12,7 @@
     </nav>
     <div class="search-chat">
       <input type="text" placeholder="물품이나 동네를 검색해보세요">
-      <button @click="openChat">채팅하기</button>
+      <router-link to="/login">로그인</router-link>
     </div>
   </header>
 </template>
@@ -25,10 +25,6 @@ const activeTab = ref('중고거래');
 
 function setActive(item) {
   activeTab.value = item;
-}
-
-function openChat() {
-  console.log('채팅하기 버튼 클릭');
 }
 </script>
 

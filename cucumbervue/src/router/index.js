@@ -17,12 +17,18 @@ const routes = [
         name: 'company',
         component: () => import("../views/CompanyView.vue"),
     },
-    
+
     {
         path: '/culture',
         name: 'culture',
         component: () => import("../views/CultureView.vue"),
     },
+
+    {
+        path: '/login',
+        name: 'login',
+        component: () => import("../views/LoginView.vue"),
+    }
 ]
 
 const router = createRouter({
@@ -30,7 +36,7 @@ const router = createRouter({
     routes,
     scrollBehavior(){
         return { top: 0 }
-        
+
     },
 });
 
