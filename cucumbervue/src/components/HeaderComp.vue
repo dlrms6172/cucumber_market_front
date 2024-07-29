@@ -5,28 +5,38 @@
     </div>
     <nav class="navigation">
       <ul>
-        <li v-for="item in menuItems" :key="item" :class="{ active: activeTab === item }" @click="setActive(item)">
-          {{ item }}
+        <li v-for="item in menuItems" :key="item.name" :class="{ active: activeTab === item.name }">
+          <router-link :to="item.link" @click="setActive(item.name)">{{ item.name }}</router-link>
         </li>
       </ul>
     </nav>
     <div class="search-chat">
       <input type="text" placeholder="물품이나 동네를 검색해보세요">
-      <router-link to="/login">로그인</router-link>
+      <router-link to="/login" class="login-button">로그인</router-link>
     </div>
   </header>
 </template>
 
+
+
+
 <script setup>
 import { ref } from 'vue';
 
-const menuItems = ['중고거래', '동네업체', '알바', '부동산', '중고차직거래'];
+const menuItems = [
+  { name: '중고거래', link: '/usedtrade' },
+  { name: '동네업체', link: '/local-business' },
+  { name: '알바', link: '/part-time-jobs' },
+  { name: '부동산', link: '/real-estate' },
+  { name: '중고차직거래', link: '/car-direct' }
+];
 const activeTab = ref('중고거래');
 
-function setActive(item) {
-  activeTab.value = item;
+function setActive(itemName) {
+  activeTab.value = itemName;
 }
 </script>
+
 
 <style scoped>
 .header {
@@ -37,10 +47,12 @@ function setActive(item) {
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .logo img {
-  height: 50px; /* 로고 크기 조정 */
+  height: 50px;
 }
 
 .navigation ul {
@@ -48,46 +60,55 @@ function setActive(item) {
   display: flex;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 .navigation li {
   margin-right: 20px;
   cursor: pointer;
-  color: black;
 }
 
-/* 탭 눌렀을 시 글씨색 전환 */
-.navigation li.active {
+.navigation li a {
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  transition: color 0.3s;
+}
+
+.navigation li a:hover {
+  color: #ccc;
+}
+
+.navigation li.active a {
   color: orange;
+}
+
+.search-chat {
+  display: flex;
+  align-items: center;
 }
 
 .search-chat input {
   margin-right: 10px;
   padding: 5px 10px;
+  border: 1px solid #ccc;
+  width: 200px;
 }
 
-button {
+.login-button {
   padding: 5px 10px;
+  color: black;
   background-color: white;
   border: 1px solid gray;
+  text-decoration: none;
+  text-align: center;
   cursor: pointer;
 }
 
-button:hover {
+.login-button:hover {
   background-color: #f0f0f0;
 }
-* {
-  padding: 0;
-  margin: 0;
-  outline: none;
-}
-#gnb-root ._1knjz490 {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  max-width: 100vw;
-  z-index: 999;
-}
 </style>
+
 
