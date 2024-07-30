@@ -29,11 +29,24 @@ const routes = [
         name: 'login',
         component: () => import("../views/LoginView.vue"),
     },
+    
+    // {
+    //     path: '/usedtrade',
+    //     name: 'usedtrade',
+    //     component: () => import("../views/UsedTradeView.vue")
+    // },
+
     {
-        path: '/usedtrade',
-        name: 'usedtrade',
-        component: () => import("../views/UsedTradeView.vue")
-    }
+        path: '/service',
+        name: 'service',
+        component: () => import("../views/ServiceView.vue")
+    },
+
+    {
+        path: '/blog',
+        name: 'blog',
+        component: () => import("../views/BlogView.vue")
+    },
 ]
 
 const router = createRouter({

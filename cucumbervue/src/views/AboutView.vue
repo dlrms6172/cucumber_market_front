@@ -101,7 +101,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .about-body {
     padding: 50px;
     text-align: left;

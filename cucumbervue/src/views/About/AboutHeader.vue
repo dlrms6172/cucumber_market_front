@@ -12,10 +12,10 @@
                     <router-link to="/culture" class="link-offset-2 link-underline link-underline-opacity-0">팀문화</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/" class="link-offset-2 link-underline link-underline-opacity-0">서비스</router-link>
+                    <router-link to="/service" class="link-offset-2 link-underline link-underline-opacity-0">서비스</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/" class="link-offset-2 link-underline link-underline-opacity-0">블로그</router-link>
+                    <router-link to="/blog" class="link-offset-2 link-underline link-underline-opacity-0">블로그</router-link>
                 </li>
                 <li class="nav-item">
                     <router-link to="/" class="link-offset-2 link-underline link-underline-opacity-0">채용공고</router-link>
@@ -49,7 +49,7 @@ li {
     left: 0;
     right: 0;
 }
-.nav-item {
+a {
     text-decoration: none;
     color: black;
 }

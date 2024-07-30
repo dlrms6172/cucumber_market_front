@@ -89,6 +89,11 @@
             <div class="clture-center">
                 <p>지속가능한 성장을<br> 위해 아낌없이<br> 지원합니다</p>
             </div>
+            
+            
+
+
+
         </div>
 
         <AboutFooter></AboutFooter>
@@ -117,7 +122,7 @@ export default {
     }
 }
 </script>
-<style>
+<style scoped>
 .culture-body {
     padding: 50px;
     text-align: left;

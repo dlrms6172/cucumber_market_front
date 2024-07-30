@@ -29,7 +29,7 @@
 <script>
 </script>
 
-<style>
+<style scoped>
 .about-footer {
     text-align: left;
     padding: 20px;
@@ -47,7 +47,7 @@ ul li {
     margin-right: 20px;
 }
 .about-link{
-    margin-left: 350px;
+    margin-left: 450px;
 }
 .about-font1{
     padding: 25px;
@@ -59,5 +59,9 @@ ul li {
     font-size: 13px;
     font-weight: bold;
     color: gray;
+}
+a{
+    text-decoration: none;
+    color: black;
 }
 </style>
