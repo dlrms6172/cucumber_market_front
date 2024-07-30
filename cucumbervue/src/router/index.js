@@ -29,12 +29,12 @@ const routes = [
         name: 'login',
         component: () => import("../views/LoginView.vue"),
     },
-    
-    // {
-    //     path: '/usedtrade',
-    //     name: 'usedtrade',
-    //     component: () => import("../views/UsedTradeView.vue")
-    // },
+
+    {
+        path: '/usedtrade',
+        name: 'usedtrade',
+        component: () => import("../views/UsedTradeView.vue")
+    },
 
     {
         path: '/service',
