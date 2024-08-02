@@ -25,10 +25,10 @@ import { ref } from 'vue';
 
 const menuItems = [
   { name: '중고거래', link: '/usedtrade' },
-  { name: '동네업체', link: '/local-business' },
-  { name: '알바', link: '/part-time-jobs' },
-  { name: '부동산', link: '/real-estate' },
-  { name: '중고차직거래', link: '/car-direct' }
+  { name: '동네업체', link: '/neighborcom' },
+  { name: '알바', link: '/partjob' },
+  { name: '부동산', link: '/realestate' },
+  { name: '중고차직거래', link: '/usedcardeal' }
 ];
 const activeTab = ref('중고거래');
 

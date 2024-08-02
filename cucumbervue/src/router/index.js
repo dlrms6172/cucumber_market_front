@@ -35,7 +35,26 @@ const routes = [
         name: 'usedtrade',
         component: () => import("../views/UsedTradeView.vue")
     },
-
+    {
+        path: '/partjob',
+        name: 'partjob',
+        component: () => import("../views/PartJobView.vue")
+    },
+    {
+        path: '/realestate',
+        name: 'realestate',
+        component: () => import("../views/RealEstateView.vue")
+    },
+    {
+        path: '/usedcardeal',
+        name: 'usedcardeal',
+        component: () => import("../views/UsedCarDealView.vue")
+    },
+    {
+        path: '/neighborcom',
+        name: 'neighborcom',
+        component: () => import("../views/NeighborComView.vue")
+    },
     {
         path: '/service',
         name: 'service',
@@ -46,7 +65,7 @@ const routes = [
         path: '/blog',
         name: 'blog',
         component: () => import("../views/BlogView.vue")
-    },
+    }
 ]
 
 const router = createRouter({
