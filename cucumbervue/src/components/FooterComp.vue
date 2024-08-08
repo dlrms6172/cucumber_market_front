@@ -28,7 +28,7 @@
                 <li class="nav-item"><a class="link" target="_blank" href="https://www.daangn.com/kr/car/">중고차 직거래</a></li>
               </ul>
               <ul class="nav-links">
-                <li class="nav-item"><a class="link" target="_blank" href="https://business.daangn.com/">당근비즈니스</a></li>
+                <li class="nav-item"><router-link to="/business">당근비즈니스</router-link></li>
                 <li class="nav-item"><a class="link" target="_blank" href="https://chat.daangn.com/onboarding">채팅하기</a></li>
               </ul>
               <ul class="nav-links">
