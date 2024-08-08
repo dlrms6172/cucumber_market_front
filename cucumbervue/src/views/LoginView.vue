@@ -1,8 +1,13 @@
 <template>
   <div class="login-container">
     <div class="login-button" @click="loginWithKakao">
-      <img src="/images/main/11.svg" alt="카카오로 로그인">
-      <span>당신 근처의 당근! <br> 지금 내 동네를 선택하고 시작하세요!</span>
+    <img src="/images/sns/Kakao.png" alt="카카오로 로그인">
+    </div>
+    <div class="login-button" @click="loginWithGoogle">
+      <img src="/images/sns/Google.png" alt="구글로 로그인">
+    </div>
+    <div class="login-button" @click="loginWithNaver">
+      <img src="/images/sns/Naver.png" alt="네이버로 로그인">
     </div>
   </div>
 </template>
@@ -35,7 +40,20 @@ export default {
       }
     };
 
-    return { loginWithKakao };
+    const loginWithGoogle = async () => {
+      const clientId = '';
+      const redirectUri = 'http://localhost:8080/auth/callback/google';
+      window.location.href = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code&scope=openid email profile`;
+    };
+
+    const loginWithNaver = async () => {
+      const clientId = '2Ok2L7BSsUw2jcTvIapZ';
+      const redirectUri = 'http://localhost:8080/auth/callback/naver';
+      const state = 'RANDOM_STATE_STRING';
+      window.location.href = `https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&state=${state}`;
+    };
+
+    return { loginWithKakao,loginWithGoogle,loginWithNaver };
   }
 }
 </script>
@@ -63,5 +81,17 @@ export default {
   color: black;
   font-size: 14px;
   text-align: center;
+}
+.login-button img {
+  margin-bottom: 20px;
+  max-width: 170px;
+  height: auto;
+}
+.login-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 10px;
 }
 </style>

@@ -117,7 +117,7 @@ div {
   display: block;
 }
 * {
-  padding: 0;
+  padding: 7px;
   margin: 0;
   outline: none;
   position: relative;
@@ -142,7 +142,7 @@ section, article, aside, footer, header, nav, hgroup {
   margin: 0 auto;
 }
 #footer-root .app-download-section {
-  padding: 4.8rem 0;
+  padding: -0.2rem 0;
 }
 @media screen and (min-width: 768px) {
   #footer-root .download-links {
@@ -155,7 +155,6 @@ section, article, aside, footer, header, nav, hgroup {
 @media screen and (min-width: 768px) {
   #footer-root .download-title {
     line-height: 1.4;
-    font-size: 1.4rem;
   }
 }
 #footer-root .download-title {
@@ -184,8 +183,8 @@ section, article, aside, footer, header, nav, hgroup {
 }
 @media screen and (min-width: 768px) {
   #footer-root .footer-nav {
-    line-height: 1.4;
-    font-size: 1.4rem;
+    line-height: 3;
+    font-size: 14px;
   }
 }
 #footer-root .footer-nav {
@@ -198,7 +197,7 @@ section, article, aside, footer, header, nav, hgroup {
   padding-inline-start: 0;
   margin-block-start: 0;
   margin-block-end: 0;
-  width: 33%;
+  width: 150px;
   list-style-type: none;
 }
 ul {
