@@ -1,7 +1,9 @@
 <template>
   <header class="header">
     <div class="logo">
-      <img src="/images/main/11.svg" alt="로고">
+      <router-link to="/">
+        <img src="/images/main/11.svg" alt="로고">
+      </router-link>
     </div>
     <nav class="navigation">
       <ul>

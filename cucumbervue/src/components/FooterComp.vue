@@ -184,7 +184,7 @@ section, article, aside, footer, header, nav, hgroup {
 @media screen and (min-width: 768px) {
   #footer-root .footer-nav {
     line-height: 3;
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 #footer-root .footer-nav {
@@ -224,7 +224,7 @@ ul {
 @media screen and (min-width: 768px) {
   #footer-root .info-details, #footer-root .contact-link {
     line-height: 1.5;
-    font-size: 1.3008rem;
+    font-size: 0.8rem;
   }
 }
 #footer-root .info-details {
