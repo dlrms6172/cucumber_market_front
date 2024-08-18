@@ -14,6 +14,15 @@
 
 <script>
 import { onMounted, ref } from 'vue';
+import { app } from '@/firebaseConfig';
+import { getAuth, signInWithRedirect, GoogleAuthProvider } from 'firebase/auth';
+
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+
+function loginWithGoogle() {
+  signInWithRedirect(auth, provider);
+}
 
 export default {
   setup() {
@@ -40,11 +49,6 @@ export default {
       }
     };
 
-    const loginWithGoogle = async () => {
-      const clientId = '';
-      const redirectUri = 'http://localhost:8080/auth/callback/google';
-      window.location.href = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code&scope=openid email profile`;
-    };
 
     const loginWithNaver = async () => {
       const clientId = '2Ok2L7BSsUw2jcTvIapZ';
