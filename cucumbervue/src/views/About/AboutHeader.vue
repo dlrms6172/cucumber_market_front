@@ -1,9 +1,11 @@
 <template>
     <nav class="navbar navbar-light " style="background-color: white;">
         <div class="container-fluid">
+          <router-link to="/">
             <a class="navbar-brand" href="#">
                 <img src="/images/main/11.svg" alt="logo">
             </a>
+          </router-link>
             <ul class="nav justify-content-end">
                 <li class="nav-item ">
                     <router-link to="/company" class="link-offset-2 link-underline link-underline-opacity-0">회사소개</router-link>
