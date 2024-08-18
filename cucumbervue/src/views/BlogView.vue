@@ -202,12 +202,12 @@ export default {
 </script>
 <style>
 .blog-body {
-    padding: 160px;
+    padding: 200px;
     min-height: 100%;
 }
 
 .blog-pho1-img {
-    width: 1200px;
+    width: 100%;
     height: 550px;
     object-fit: cover;
     border-radius: 30px;
@@ -280,10 +280,10 @@ export default {
     flex-wrap: wrap;
 }
 .blog-list2{
-    margin-left: 140px;
+    margin-left: 80px;
 }
 .blog-list4{
-    margin-left: 140px;
+    margin-left: 80px;
 
 }
 </style>

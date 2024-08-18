@@ -39,7 +39,7 @@
             <div class="row row-cols-1 row-cols-md-2 g-4">
                 <div class="col">
                     <div class="card border-light">
-                        <div class="card-body" >
+                        <div class="card-body">
                             <h5 class="card-title">누적 가입자 수<br> 3600만명</h5>
                         </div>
                     </div>
@@ -61,13 +61,64 @@
                 <div class="col">
                     <div class="card border-light">
                         <div class="card-body">
-                            <h5 class="card-title">영국, 일본,<br> 캐나다, 미국 등<br> 글로벌 460여 개<br> 지역 진출   </h5>
+                            <h5 class="card-title">영국, 일본,<br> 캐나다, 미국 등<br> 글로벌 460여 개<br> 지역 진출 </h5>
                         </div>
                     </div>
                 </div>
+
+
+            </div>
+        </div>
+
+        <div class="company-global">
+            <p class="company-global-font1">유수한 글로발 투자자들이 당신과 함께합니다.</p>
+            <div class="company-global">
+                <img src="images/Company/company4.png">
+                <img src="images/Company/company5.png">
+                <img src="images/Company/company6.png">
+
+            </div>
+            <div class="company-global">
+                <img src="images/Company/company7.png">
+                <img src="images/Company/company8.png">
+                <img src="images/Company/company9.png">
+
+            </div>
+            <div class="company-global">
+                <img src="images/Company/company10.png">
+                <img src="images/Company/company11.png">
+                <img src="images/Company/company12.png">
+
+            </div>
+        </div>
+
+
+
+        <div class="company-news">
+
+            <div class="user-image">
+                <img src="/images/Company/company13.avif" alt="pho7">
+            </div>
+            <div class="news-text">
+                <p class="news-font1">가장 최신의 당근 소식을 확인하세요</p>
+                <p class="news-font2">보도자료 보러 가기 -></p>
+            </div>
+
+            <div class="news-box1">
+                <a class="news-box" href="https://about.daangn.com/company/pr/archive/2024-%EC%A0%84%EA%B5%AD-%EC%A7%80%EB%B0%A9%EC%9E%90%EC%B9%98%EB%8B%A8%EC%B2%B4-%EC%9D%BC%EC%9E%90%EB%A6%AC%EB%8C%80%EC%83%81-%ED%8F%89%EA%B0%80-%EC%B5%9C%EC%9A%B0%EC%88%98%EC%83%81-%EC%88%98%EC%83%81/">'2024 전국 지방자치단체<br> 일자리대상 평가' 최우수상<br> 수상</a>
+                <a class="news-box" href="https://about.daangn.com/company/pr/archive/2024-%EC%A0%84%EA%B5%AD-%EC%A7%80%EB%B0%A9%EC%9E%90%EC%B9%98%EB%8B%A8%EC%B2%B4-%EC%9D%BC%EC%9E%90%EB%A6%AC%EB%8C%80%EC%83%81-%ED%8F%89%EA%B0%80-%EC%B5%9C%EC%9A%B0%EC%88%98%EC%83%81-%EC%88%98%EC%83%81/">당근알바 '오뚜기 3분알바'<br> 이색 체험 실시</a>
+                <a class="news-box" href="https://about.daangn.com/company/pr/archive/2024-%EC%A0%84%EA%B5%AD-%EC%A7%80%EB%B0%A9%EC%9E%90%EC%B9%98%EB%8B%A8%EC%B2%B4-%EC%9D%BC%EC%9E%90%EB%A6%AC%EB%8C%80%EC%83%81-%ED%8F%89%EA%B0%80-%EC%B5%9C%EC%9A%B0%EC%88%98%EC%83%81-%EC%88%98%EC%83%81/">당근 X 한국 코카-콜라,<br> 자원순환 캠페인 실시</a>
+                <a class="news-box" href="https://about.daangn.com/company/pr/archive/2024-%EC%A0%84%EA%B5%AD-%EC%A7%80%EB%B0%A9%EC%9E%90%EC%B9%98%EB%8B%A8%EC%B2%B4-%EC%9D%BC%EC%9E%90%EB%A6%AC%EB%8C%80%EC%83%81-%ED%8F%89%EA%B0%80-%EC%B5%9C%EC%9A%B0%EC%88%98%EC%83%81-%EC%88%98%EC%83%81/">당근 ‘모임’ 오픈 1년 만에<br> 1500만 이용자 돌파! 누적<br> 방문횟수 12억 7천만 회 달해</a>
+                <a class="news-box" href="https://about.daangn.com/company/pr/archive/2024-%EC%A0%84%EA%B5%AD-%EC%A7%80%EB%B0%A9%EC%9E%90%EC%B9%98%EB%8B%A8%EC%B2%B4-%EC%9D%BC%EC%9E%90%EB%A6%AC%EB%8C%80%EC%83%81-%ED%8F%89%EA%B0%80-%EC%B5%9C%EC%9A%B0%EC%88%98%EC%83%81-%EC%88%98%EC%83%81/">당근,  2024 당근 동네사장님 <br> 어워즈 > 공모 시작</a>
+
             </div>
 
         </div>
+
+
+
+
+
         <AboutFooter></AboutFooter>
     </div>
 </template>
@@ -93,7 +144,8 @@ export default {
 </script>
 <style scoped>
 .company-body {
-    padding: 50px;
+    padding: 200px;
+    padding-top: 0%;
     text-align: left;
 }
 
@@ -104,7 +156,7 @@ export default {
 }
 
 .company-pho1-img {
-    width: 1160px;
+    width: 100%;
     height: 700px;
     object-fit: cover;
     border-radius: 30px;
@@ -191,8 +243,92 @@ export default {
     background-color: #f1f3f5;
     border-radius: 20px;
     height: 300px;
+    border-style: none;
 }
+
 .col {
     z-index: -1;
 }
+
+.company-global {
+    background-color: #f7f8fa;
+    text-align: center;
+    width: auto;
+    margin-top: 100px;
+}
+
+.company-global img {
+    width: 20%;
+}
+
+.company-global-font1 {
+    font-size: 40px;
+    font-weight: bold;
+    padding-top: 150px;
+
+}
+
+.news-img1 {
+    width: 100%;
+    z-index: -1;
+}
+
+.company-news-img {
+    position: relative;
+}
+
+.company-news-font1 {
+    position: absolute;
+    margin-top: 20px;
+}
+
+.company-news {
+    position: relative;
+}
+
+.company-news img {
+    width: 100%;
+    margin-top: 30px;
+}
+
+
+.news-text {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    text-align: center;
+}
+
+.news-font1 {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.news-font2 {
+    font-weight: bold;
+    font-size: 20px;
+}
+.news-box {
+    border-radius: 30px;
+    opacity: 0.7;
+    background-color: #fff;
+    color: black;
+    text-decoration: none;
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+    text-align: left;
+    font-weight: bold;
+    
+}
+.news-box1 {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    font-size: 20px;
+}
+
 </style>

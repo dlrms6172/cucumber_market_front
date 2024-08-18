@@ -56,9 +56,33 @@
         <img src="/images/About/aboutview5.jpg" alt="pho5" class="about-pho5-img">
 
 
-        <div class="about-blog">
+        <div class="about-center">
             <p class="about-font6">당근 팀 이야기가 더 궁금하다면</p>
             <p class="about-font3">블로그 글 보러가기</p>
+
+        </div>
+        <div class="about-img-slide">
+            <div class="about-slide1">
+                <img src="images/About/about7.avif" class="slide1">
+                <p class="slide-font1">당근 광고가 만들어지는 <br>곳, DSP</p>
+            </div>
+            <div class="about-slide1">
+                <img src="images/About/about8.avif" class="slide1">
+                <p class="slide-font1">따뜻하고 정겨운 동네<br> 같은 당근 오피스에서의<br> 하루</p>
+            </div>
+            <div class="about-slide1">
+                <img src="images/About/about9.avif" class="slide1">
+                <p class="slide-font1">협업과 몰입을 극강으로,<br> 부동산팀 피처톤 데이</p>
+            </div>
+            <div class="about-slide1">
+                <img src="images/About/about10.avif" class="slide1">
+                <p class="slide-font1">‘당근다움’을 어떻게<br> 보여줄 것인가</p>
+            </div>
+            <div class="about-slide1">
+                <img src="images/About/about11.avif" class="slide1">
+                <p class="slide-font1">리더는 혼자가 아니니까,<br> Cheer Leaders!</p>
+            </div>
+            
         </div>
 
         <div class="user-wrap">
@@ -103,7 +127,8 @@ export default {
 
 <style scoped>
 .about-body {
-    padding: 50px;
+    padding: 200px;
+    padding-top: 0%;
     text-align: left;
 }
 
@@ -114,7 +139,7 @@ export default {
 }
 
 .about-pho1-img {
-    width: 1160px;
+    width: 100%;
     height: 600px;
     object-fit: cover;
     border-radius: 30px;
@@ -215,4 +240,23 @@ export default {
 .about-blog {
     margin-top: 140px;
 }
+.about-img-slide{
+    display: flex;
+    position: relative;
+    margin-top: 100px;
+}
+.slide1 {
+    border-radius: 20px;
+    width: 250px;
+    margin: 20px;
+}
+.slide-font1{
+    color: white;
+    position: absolute;
+    top: 65%;
+    margin-left: 30px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
 </style>
