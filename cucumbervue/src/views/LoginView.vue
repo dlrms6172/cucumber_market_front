@@ -64,7 +64,7 @@ export default {
 
     const loginWithNaver = async () => {
       const clientId = '2Ok2L7BSsUw2jcTvIapZ';
-      const redirectUri = 'http://localhost:8080/auth/callback/naver';
+      const redirectUri = 'http://localhost:8080/';
       const state = 'RANDOM_STATE_STRING';
       window.location.href = `https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&state=${state}`;
     };
