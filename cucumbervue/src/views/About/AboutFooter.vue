@@ -40,6 +40,7 @@
 }
 .about-footer1 {
     list-style-type: none;
+    margin-left: 200px;
 }
 
 ul li {
@@ -47,7 +48,7 @@ ul li {
     margin-right: 20px;
 }
 .about-link{
-    margin-left: 450px;
+    margin-left: 300px;
 }
 .about-font1{
     padding: 25px;
@@ -63,5 +64,8 @@ ul li {
 a{
     text-decoration: none;
     color: black;
+}
+p{
+    margin-left: 200px;
 }
 </style>

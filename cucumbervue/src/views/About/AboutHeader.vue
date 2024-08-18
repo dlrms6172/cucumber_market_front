@@ -18,7 +18,7 @@
                     <router-link to="/blog" class="link-offset-2 link-underline link-underline-opacity-0">블로그</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/" class="link-offset-2 link-underline link-underline-opacity-0">채용공고</router-link>
+                    <a href="https://about.daangn.com/jobs/">채용공고</a>
                 </li>
             </ul>
         </div>
@@ -30,7 +30,7 @@
 </script>
 <style scoped>
 .navbar-brand{
-    margin-left: 50px;
+    margin-left: 200px;
 
 }
 

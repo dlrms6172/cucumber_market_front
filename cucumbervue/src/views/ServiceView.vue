@@ -117,7 +117,7 @@
                 </div>
                 <div class="service-midd">
                     <img src="https://about.daangn.com/static/eb96899c03151c4d2f9b7280dca53926/39497/66cb4772-88d5-4def-9fd1-937c402ad853_service_06.avif"
-                        class="service-pho2-img">
+                        class="service-pho3-img">
 
                 </div>
             </div>
@@ -137,7 +137,7 @@
                 </div>
                 <div class="service-midd">
                     <img src="https://about.daangn.com/static/a699b9b54fc91230d8381033298d5f1d/39497/20388bc0-6492-40af-9cd5-475813c19c08_service_07.avif"
-                        class="service-pho2-img">
+                        class="service-pho3-img">
 
                 </div>
             </div>
@@ -192,7 +192,8 @@ export default {
 </script>
 <style>
 .service-body {
-    padding: 50px;
+    padding: 200px;
+    padding-top: 0%;
     text-align: left;
 }
 
@@ -215,7 +216,7 @@ export default {
 .service-pho2-img {
     object-fit: cover;
     border-radius: 30px;  
-    margin-left: 200px;
+    margin-left: 100px;
     margin-top: 20px;
 }
 
@@ -229,7 +230,7 @@ export default {
 .service-pho3-img {
     object-fit: cover;
     border-radius: 30px;  
-    margin-left: 220px;
+    margin-left: 100px;
     margin-top: 20px;
     width: 530px;
     margin-bottom: 20px;
