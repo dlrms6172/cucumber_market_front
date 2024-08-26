@@ -112,10 +112,22 @@
             </div>
 
             <div class="news-box1">
-                <a class="news-box" href="https://about.daangn.com/company/pr/archive/2024-%EC%A0%84%EA%B5%AD-%EC%A7%80%EB%B0%A9%EC%9E%90%EC%B9%98%EB%8B%A8%EC%B2%B4-%EC%9D%BC%EC%9E%90%EB%A6%AC%EB%8C%80%EC%83%81-%ED%8F%89%EA%B0%80-%EC%B5%9C%EC%9A%B0%EC%88%98%EC%83%81-%EC%88%98%EC%83%81/">'2024 전국 지방자치단체<br> 일자리대상 평가' 최우수상<br> 수상</a>
-                <a class="news-box" href="https://about.daangn.com/company/pr/archive/2024-%EC%A0%84%EA%B5%AD-%EC%A7%80%EB%B0%A9%EC%9E%90%EC%B9%98%EB%8B%A8%EC%B2%B4-%EC%9D%BC%EC%9E%90%EB%A6%AC%EB%8C%80%EC%83%81-%ED%8F%89%EA%B0%80-%EC%B5%9C%EC%9A%B0%EC%88%98%EC%83%81-%EC%88%98%EC%83%81/">당근알바 '오뚜기 3분알바'<br> 이색 체험 실시</a>
-                <a class="news-box" href="https://about.daangn.com/company/pr/archive/2024-%EC%A0%84%EA%B5%AD-%EC%A7%80%EB%B0%A9%EC%9E%90%EC%B9%98%EB%8B%A8%EC%B2%B4-%EC%9D%BC%EC%9E%90%EB%A6%AC%EB%8C%80%EC%83%81-%ED%8F%89%EA%B0%80-%EC%B5%9C%EC%9A%B0%EC%88%98%EC%83%81-%EC%88%98%EC%83%81/">당근 X 한국 코카-콜라,<br> 자원순환 캠페인 실시</a>
-                <a class="news-box" href="https://about.daangn.com/company/pr/archive/2024-%EC%A0%84%EA%B5%AD-%EC%A7%80%EB%B0%A9%EC%9E%90%EC%B9%98%EB%8B%A8%EC%B2%B4-%EC%9D%BC%EC%9E%90%EB%A6%AC%EB%8C%80%EC%83%81-%ED%8F%89%EA%B0%80-%EC%B5%9C%EC%9A%B0%EC%88%98%EC%83%81-%EC%88%98%EC%83%81/">당근 ‘모임’ 오픈 1년 만에<br> 1500만 이용자 돌파! 누적<br> 방문횟수 12억 7천만 회 달해</a>
+                <a class="news-box" href="https://about.daangn.com/company/pr/archive/2024-%EC%A0%84%EA%B5%AD-%EC%A7%80%EB%B0%A9%EC%9E%90%EC%B9%98%EB%8B%A8%EC%B2%B4-%EC%9D%BC%EC%9E%90%EB%A6%AC%EB%8C%80%EC%83%81-%ED%8F%89%EA%B0%80-%EC%B5%9C%EC%9A%B0%EC%88%98%EC%83%81-%EC%88%98%EC%83%81/">
+                    <p>'2024 전국 지방자치단체<br> 일자리대상 평가' 최우수상<br> 수상</p>
+                    <time datetime="2024-08-23" class="news-date" >2024-08-23</time>
+                </a>
+                <a class="news-box" href="https://about.daangn.com/company/pr/archive/2024-%EC%A0%84%EA%B5%AD-%EC%A7%80%EB%B0%A9%EC%9E%90%EC%B9%98%EB%8B%A8%EC%B2%B4-%EC%9D%BC%EC%9E%90%EB%A6%AC%EB%8C%80%EC%83%81-%ED%8F%89%EA%B0%80-%EC%B5%9C%EC%9A%B0%EC%88%98%EC%83%81-%EC%88%98%EC%83%81/">
+                    <p>당근알바 '오뚜기 3분알바'<br> 이색 체험 실시</p>
+                    <time datetime="2024-08-23" class="news-date" >2024-08-23</time>
+                </a>
+                <a class="news-box" href="https://about.daangn.com/company/pr/archive/2024-%EC%A0%84%EA%B5%AD-%EC%A7%80%EB%B0%A9%EC%9E%90%EC%B9%98%EB%8B%A8%EC%B2%B4-%EC%9D%BC%EC%9E%90%EB%A6%AC%EB%8C%80%EC%83%81-%ED%8F%89%EA%B0%80-%EC%B5%9C%EC%9A%B0%EC%88%98%EC%83%81-%EC%88%98%EC%83%81/">
+                    <p>당근 X 한국 코카-콜라,<br> 자원순환 캠페인 실시</p>
+                    <time datetime="2024-08-23" class="news-date" >2024-08-23</time>
+                </a>
+                <a class="news-box" href="https://about.daangn.com/company/pr/archive/2024-%EC%A0%84%EA%B5%AD-%EC%A7%80%EB%B0%A9%EC%9E%90%EC%B9%98%EB%8B%A8%EC%B2%B4-%EC%9D%BC%EC%9E%90%EB%A6%AC%EB%8C%80%EC%83%81-%ED%8F%89%EA%B0%80-%EC%B5%9C%EC%9A%B0%EC%88%98%EC%83%81-%EC%88%98%EC%83%81/">
+                    <p>당근 ‘모임’ 오픈 1년 만에<br> 1500만 이용자 돌파! 누적<br> 방문횟수 12억 7천만 회 달해</p>
+                    <time datetime="2024-08-23" class="news-date" >2024-08-23</time>
+                </a>
                 <!-- <a class="news-box" href="https://about.daangn.com/company/pr/archive/2024-%EC%A0%84%EA%B5%AD-%EC%A7%80%EB%B0%A9%EC%9E%90%EC%B9%98%EB%8B%A8%EC%B2%B4-%EC%9D%BC%EC%9E%90%EB%A6%AC%EB%8C%80%EC%83%81-%ED%8F%89%EA%B0%80-%EC%B5%9C%EC%9A%B0%EC%88%98%EC%83%81-%EC%88%98%EC%83%81/">당근,  2024 당근 동네사장님 <br> 어워즈 > 공모 시작</a> -->
 
             </div>
@@ -351,6 +363,7 @@ export default {
     width: 300px;
     height: 200px;
     margin: 10px;
+    padding: 20px;
     text-align: left;
     font-weight: bold;
     
@@ -360,6 +373,12 @@ export default {
     position: absolute;
     top: 50%;
     font-size: 20px;
+    margin-left: 100px;
+}
+.news-date {
+    color: #adb1ba;
+    font-weight: lighter;
+    font-size: 15px;
 }
 
 </style>
