@@ -91,7 +91,7 @@
             </div>
             <div class="user-text">
                 <p class="about-font6">당근과 함께 성장해보세요</p>
-                <p class="about-font3">채용공고 보러가기</p>
+                <a href="https://about.daangn.com/jobs/" class="about-font3">채용공고 보러가기</a>
             </div>
         </div>
 
@@ -161,6 +161,8 @@ export default {
 .about-font3 {
     font-weight: bold;
     font-size: 20px;
+    text-decoration: none;
+    color: black;
 }
 
 .about-font4 {
@@ -230,7 +232,7 @@ export default {
 
 .user-text {
     position: absolute;
-    top: 75%;
+    top: 72%;
     left: 50%;
     width: 100%;
     transform: translate(-50%, -50%);
@@ -244,6 +246,8 @@ export default {
     display: flex;
     position: relative;
     margin-top: 100px;
+    z-index: -1;
+    margin-left: 30px;
 }
 .slide1 {
     border-radius: 20px;

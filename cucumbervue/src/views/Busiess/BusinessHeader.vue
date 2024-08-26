@@ -79,7 +79,6 @@ a {
 
 .logo1 {
     width: 130px;
-    margin-top: -20px;
     margin-left: 80px;
 
 }
@@ -87,6 +86,7 @@ a {
 .navbar-menu {
     display: flex;
     list-style: none;
+    height: 23px
 }
 
 .navbar-menu li {

@@ -1,23 +1,27 @@
 <template>
     <nav class="navbar navbar-light " style="background-color: white;">
         <div class="container-fluid">
-          <router-link to="/">
-            <a class="navbar-brand" href="#">
-                <img src="/images/main/11.svg" alt="logo">
-            </a>
-          </router-link>
+            <router-link to="/">
+                <a class="navbar-brand" href="#">
+                    <img src="/images/main/11.svg" alt="logo">
+                </a>
+            </router-link>
             <ul class="nav justify-content-end">
                 <li class="nav-item ">
-                    <router-link to="/company" class="link-offset-2 link-underline link-underline-opacity-0">회사소개</router-link>
+                    <router-link to="/company"
+                        class="link-offset-2 link-underline link-underline-opacity-0">회사소개</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/culture" class="link-offset-2 link-underline link-underline-opacity-0">팀문화</router-link>
+                    <router-link to="/culture"
+                        class="link-offset-2 link-underline link-underline-opacity-0">팀문화</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/service" class="link-offset-2 link-underline link-underline-opacity-0">서비스</router-link>
+                    <router-link to="/service"
+                        class="link-offset-2 link-underline link-underline-opacity-0">서비스</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/blog" class="link-offset-2 link-underline link-underline-opacity-0">블로그</router-link>
+                    <router-link to="/blog"
+                        class="link-offset-2 link-underline link-underline-opacity-0">블로그</router-link>
                 </li>
                 <li class="nav-item">
                     <a href="https://about.daangn.com/jobs/">채용공고</a>
@@ -31,7 +35,7 @@
 <script>
 </script>
 <style scoped>
-.navbar-brand{
+.navbar-brand {
     margin-left: 200px;
 
 }
@@ -45,15 +49,16 @@ ul li {
 li {
     color: black;
 }
+
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
 }
+
 a {
     text-decoration: none;
     color: black;
 }
-
 </style>

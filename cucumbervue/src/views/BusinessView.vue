@@ -3,12 +3,14 @@
         <BusinessHeader></BusinessHeader>
         <div class="business-video">
             <video width="100%" autoplay="" muted="" loop="" playsinline="">
-                <source src="https://business.karroter.net/daangn-business/home-v2/awards_1440x520_black.mp4">
+                <source src="https://business.karroter.net/daangn-business/home-v2/hero_back_1440_black.mp4">
             </video>
-            <div class="video-font">
-                <!-- <h1>2024 당근<br>
-                    동네사장님 어워즈</h1> -->
+            <h1 class="video-font">당근이웃, 내 고객이 되다</h1>
+            <div class="video-button">
+                <button class="video-button-1"><a href="https://business.daangn.com/login?type=signup">무료로
+                        시작하기</a></button>
             </div>
+
         </div>
 
         <div class="business-font2">
@@ -35,104 +37,15 @@
             </div>
         </div>
 
-        <div class="dang-go">
-            <p class="danggo-font1">광고 상품</p>
-            <p class="danggo-font2">당근이라서 가능한<br> 동네 기반 광고</p>
-
-            <div class="dango-video">
-                <div class="danggo-video1-1">
-                    <video width="45%" autoplay="" muted="" loop="" playsinline="" class="danggo-video1">
-                        <source
-                            src="https://business.karroter.net/daangn-business/home-v2/ad_product_display_ad_768.mp4"
-                            type="video/mp4">
-                    </video>
-                    <div class="danggo-video1-2">
-                        <p class="danggo-font3"><a href="https://bizschool.daangn.com/displayads">피드 광고</a></p>
-                        <p class="danggo-font4">동네 이웃 2명 중 1명이 사용하는 중고거래 홈에 보여요.</p>
-                    </div>
-                </div>
-
-                <div class="danggo-video-2-1">
-                    <video width="45%" autoplay="" muted="" loop="" playsinline="" class="danggo-video2">
-                        <source
-                            src="https://business.karroter.net/daangn-business/home-v2/ad_product_display_ad_768.mp4"
-                            type="video/mp4">
-                    </video>
-                    <div class="danggo-video1-2">
-                        <p class="danggo-font3"><a href="https://bizschool.daangn.com/displayads">검색 광고</a></p>
-                        <p class="danggo-font4">우리 가게에 관심 있을 만한 이웃의 검색 결과에 보여요.</p>
-                    </div>
-                </div>
-
+        <div class="body-200px">
+            <div class="dang-gwang">
+                <p class="font-orange">광고 상품</p>
+                <p class="gwang-font1">당근이라서 가능한 <br>동네 기반 광고 </p>
 
             </div>
-            <div class="dang-mode">
-                <p class="danggo-font1">광고 모드</p>
-                <p class="danggo-font2">광고 목표, 필요한 기능에 따라<br> 선택가능한 광고 모드</p>
-            </div>
-
-            <div class="dang-mode-1-1">
-                <p class="dang-mode-1"><a href="https://business.daangn.com/ads/smb">간편모드</a></p>
-                <p>쉽고 빠르게 우리 가게를 알리고 싶은 소상공인 광고주에게 추천해요.</p>
-
-                <div class="dang-mode-video">
-                    <div class="dang-mode-video-1-1">
-                        <video width="30%" autoplay="" muted="" loop="" playsinline="" class="dang-mode-video1">
-                            <source
-                                src="https://business.karroter.net/daangn-business/home-v2/simple_mode_01_440x572_v2.mp4"
-                                type="video/mp4">
-                        </video>
-                    </div>
-                    <div>
-                        <p class="dang-mode-font1">원하는 동네만 쏙쏙</p>
-                        <p class="dang-mode-font2">광고하고 싶은 동네를 직접 선택할 수 있어요.</p>
-                    </div>
-
-                    <p class="dang-mode-1"><a href="https://business.daangn.com/ads/marketer">전문가 모드</a></p>
-                    <p>광고 목표 달성을 위해 정교한 관리 기능이 필요한 마케팅 담당자 및 광고주에게 추천해요.</p>
-                    <div class="dang-mode-video-2-1">
-                        <video width="30%" autoplay="" muted="" loop="" playsinline="" class="dang-mode-video2">
-                            <source
-                                src="https://business.karroter.net/daangn-business/home-v2/expert_mode_03_924x572.mp4"
-                                type="video/mp4">
-                        </video>
-                    </div>
-                    <div>
-                        <p class="dang-mode-font1">맞춤 보고서</p>
-                        <p class="dang-mode-font2">원하는 지표 위주로 맞품형 보고서를 만들고 필요한 성과 데이터를 분석할 수 있어요.</p>
-                    </div>
-
-                </div>
-            </div>
-
         </div>
 
-        <div class="dang-middle">
 
-            <div class="dang-middle-font">
-                <img src="/images/Business/business3.png" class="middle-pho1">
-            </div>
-
-            <!-- <div class="dang-middle-font1 ">
-                <p class="middle-font1">비즈프로필</p>
-                <p class="middle-font2">당근 안에서<br>
-                    보여주는 내 업체</p>
-                <p class="middle-font3">당근에 무료로 내 업체를 등록하고,<br>
-                    동네에 손 쉽게 알려보세요.</p>
-                <button class="middle-button">비즈프로필 더 알아보기</button>
-            </div> -->
-            <!--             
-            <div class="middle-service">
-                <p class="middle-font1">서비스</p>
-                <p class="middle-font2">비즈니스에 힘이 되는 서비스</p>
-
-                <div>
-                    <img src="/images/Business/bussiness4.png"  class="middle-pho2">
-                </div>
-            </div> -->
-
-
-        </div>
     </div>
     <BusinessFooter></BusinessFooter>
 
@@ -164,6 +77,10 @@ video::-webkit-media-controls {
     display: none !important;
 }
 
+.business-video {
+    position: relative;
+}
+
 .business-video video {
     z-index: -1500;
     margin-top: 45px;
@@ -175,7 +92,13 @@ video {
 }
 
 .video-font {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 70px;
 
 }
 
@@ -358,107 +281,36 @@ video {
 
 }
 
-.dang-mode {
-    margin-top: 200px;
-}
-
-.dang-mode-1 a {
-    text-decoration: none;
-    color: black;
-}
-
-.dang-mode-1 {
-    font-size: 30px;
-    font-weight: bold;
-    margin-top: 70px;
-}
-
-.dang-mode-video-1-1 {
+.video-button-1 {
     border-radius: 10px;
-    background-color: #f2f0ef;
-    margin-top: 40px;
-}
-
-.dang-mode-video-2-1 {
-
-    border-radius: 10px;
-    background-color: #f2f0ef;
-    margin-top: 40px;
-    height: 400px;
-}
-
-.dang-mode-video1 {
-    display: flex;
-    justify-content: center;
-    margin-left: 350px;
-}
-
-.dang-mode-video2 {
-    display: flex;
-    justify-content: center;
-    margin-left: 250px;
-    width: 50%;
-    height: 100%;
-}
-
-.dang-mode-font1 {
-    font-weight: bold;
-    font-size: 20px;
-    margin-top: 20px;
-}
-
-.dang-mode-font2 {
-    font-size: 20px;
-}
-
-.dang-middle {
-    width: 100%;
-    background-color: #edece9;
-    display: flex;
-}
-
-.dang-middle-font {
-    display: flex;
-}
-.dang-middle-font1 {
-    margin-right: 300px;
-}
-.middle-pho1 {
-    width: 50%;
-    margin-top: 100px;
-    margin-left: 200px;
-}
-
-.middle-font1 {
-    color: #ff6f0f;
-    font-weight: bold;
-    margin-top: 200px;
-    font-size: 22px;
-    margin-left: 100px;
-}
-
-.middle-font2 {
-    font-weight: bold;
-    font-size: 40px;
-    text-align: left;
-    margin-left: 100px;
-}
-
-.middle-font3 {
-    font-size: 22px;
-    text-align: left;
-    margin-left: 100px;
-    color: #868b94;
-}
-
-.middle-button {
-    width: 200px;
-    height: 50px;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 210px;
+    height: 60px;
     background-color: #ff6f0f;
-    border-radius: 10px;
-    color: white;
+    font-size: 20px;
     font-weight: bold;
-    margin-left: 100px;
     border: none;
+}
+
+.video-button-1 a {
+    text-decoration: none;
+    color: white;
+}
+
+.font-orange {
+    color: #ff6f0f;
+    font-size: 20px;
+    font-weight: bold;
+}
+.gwang-font1 {
+    text-align: left;
+    font-size: 45px;
+    font-weight: bold;
+}
+.body-200px {
+    padding: 200px;
 }
 </style>
