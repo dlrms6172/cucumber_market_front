@@ -1,29 +1,27 @@
 <template>
   <header-view></header-view>
   <main>
-    <section class="fleamarket-cover">
+    <section class="store-cover">
       <div class="cover-content">
-        <h1 class="cover-title">믿을만한<br>이웃 간 중고거래</h1>
-        <span class="cover-description">동네 주민들과 가깝고 따뜻한 거래를<br>지금 경험해보세요.</span>
+        <h1 class="cover-title">동네 이웃들이<br>자주 가는 동네 업체</h1>
+        <span class="cover-description">우리 동네 사람들이<br>이용하는 업체를 찾아보세요.</span>
         <div class="cover-image">
-        <span class="fleamarket-cover-image">
+        <span class="store-cover-image">
           <img
-              srcset="https://d1unjqcospf8gs.cloudfront.net/assets/home/main/3x/fleamarket-39d1db152a4769a6071f587fa9320b254085d726a06f61d544728b9ab3bd940a.webp "
               alt="믿을만한 이웃 간 중고거래"
-              src="/images/UsedTradeView/fleamarket-39d1db152a4769a6071f587fa9320b254085d726a06f61d544728b9ab3bd940a.webp">
+              src="/images/NeighborCom/nearby_stores_hero_image_3x.47c43e04.png">
         </span>
-          <span class="fleamarket-cover-image-mobile">
+          <span class="store-cover-image-mobile">
           <img
-              srcset="https://d1unjqcospf8gs.cloudfront.net/assets/home/main/mobile/3x/fleamarket-1caf5c24c82acb20bd86fa8c018987be7812a1f0ce0858dcf175568bfc3cf87d.webp 3x"
               alt="믿을만한 이웃 간 중고거래"
-              src="/images/UsedTradeView/fleamarket-1caf5c24c82acb20bd86fa8c018987be7812a1f0ce0858dcf175568bfc3cf87d.webp">
+              src="/images/NeighborCom/nearby_stores_hero_image_3x.47c43e04.png">
         </span>
         </div>
       </div>
     </section>
     <section class="fleamarket-article-list">
       <h1 class="text-center article-list-title">
-        중고거래 인기매물
+        다양한 동네업체 볼 수 있어요
       </h1>
 
       <div class="cards-wrap">
@@ -127,13 +125,13 @@ export default {
 </script>
 <style>
 @media (min-width: 768px) {
-  .fleamarket-cover {
+  .store-cover {
     height: 315px;
     padding: 0 16px 0 16px;
   }
 }
 
-.fleamarket-cover .cover-content {
+.store-cover .cover-content {
   position: relative;
   height: 100%;
   box-sizing: border-box;
@@ -176,7 +174,7 @@ h1, h2, h3, h4, h5, h5 {
   }
 }
 
-.fleamarket-cover .cover-content .cover-image {
+.store-cover .cover-content .cover-image {
   position: absolute;
   bottom: 0;
   display: flex;
@@ -190,7 +188,7 @@ h1, h2, h3, h4, h5, h5 {
   }
 }
 
-.fleamarket-cover .cover-content .cover-image span {
+.store-cover .cover-content .cover-image span {
   box-sizing: border-box;
   overflow: hidden;
   width: initial;
@@ -208,16 +206,16 @@ h1, h2, h3, h4, h5, h5 {
 }
 
 @media (min-width: 768px) {
-  .cover-image .fleamarket-cover-image {
+  .cover-image .store-cover-image {
     display: block;
   }
 }
 
-.fleamarket-cover .cover-content .cover-image span img {
+.store-cover .cover-content .cover-image span img {
   position: absolute;
   top: 0;
   left: 0;
-  bottom: 0;
+  bottom: -76px;
   right: 0;
   box-sizing: border-box;
   padding: 0;
@@ -230,17 +228,17 @@ h1, h2, h3, h4, h5, h5 {
   min-height: 100%;
   max-height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 @media (min-width: 768px) {
-  .cover-image .fleamarket-cover-image img {
+  .cover-image .store-cover-image img {
     display: block;
   }
 }
 
-.fleamarket-cover {
-  background-color: #FFF1AA;
+.store-cover {
+  background-color: #f7f1eb;
 }
 
 section, article, aside, footer, header, nav, hgroup {
