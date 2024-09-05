@@ -1,27 +1,35 @@
 <template>
+    <hr>
     <div class="about-footer">
-        <hr>
+
         <nav class="about-footer0">
             <ul class="about-footer1" style="display: inline">
-                <li><router-link to="/">개인정보처리방침</router-link></li>
-                <li><router-link to="/">브랜드 리소스</router-link></li>
-                <li><router-link to="/">자주 묻는 질문</router-link></li>
-                <li><router-link to="/">IR</router-link></li>
-                <li><router-link to="/">PR</router-link></li>
+                <li><a href="/">유튜브</a></li>
+                <li><a href="/">네이버 블로그</a></li>
+                <li><a href="/">카카오 채널</a></li>
+                <li><a href="https://www.instagram.com/daangnmarket/">인스타그램</a></li>
+
             </ul>
 
-            <ul class="about-link" style="display: inline">
-                <li><a href="https://github.com/daangn">github</a></li>
-                <li><a href="https://medium.com/daangn">Blog</a></li>
-                <li><a href="https://www.facebook.com/daangn/">Facebook</a></li>
-                <li><a href="https://www.instagram.com/daangnmarket/">Instagram</a></li>
+            <p class="copyright">Copyright © Danggeun Market Inc.</p>
+            <p class="copyright">(주)당근마켓 | 대표 황도연, 김용현 | 사업자등록번호 375-87-00088 | 통신판매업신고번호 2016-서울서초-0051 | 호스팅 사업자
+                Amazon Web Service(AWS)<br>
+                주소 서울특별시 구로구 디지털로 30길 28, 609호 (당근서비스)<br>
+                전화 문의 1644-9736</p>
+
+            <div class="copy-footer">
+                <ul class="about-footer1" style="display: inline">
+                <li><a href="/">개인정보처리방침</a></li>
+                <li><a href="/">이용약관</a></li>
+                <li><a href="/">광고 운영정책</a></li>
+                <li><a href="/">상품판매 운영정책</a></li>
+
             </ul>
+            </div>
+            
 
         </nav>
-        
-        <p class="about-font1">주소 : 서울특별시 서초구 강남대로 465, 교보강남타워 11층 (IR 관련 문의 : ir@daangn.com)<br>
-            (채용 관련 문의 : recruit@daangn.com)</p>
-        <p class="about-font2">© 당근마켓</p>
+
 
     </div>
 </template>
@@ -32,36 +40,52 @@
 <style scoped>
 .about-footer {
     text-align: left;
-    padding: 20px;
+    padding-left: 200px;
+    padding-right: 200px;
     margin-top: 40px;
 }
-.about-footer0{
+
+.about-footer0 {
     margin-top: 80px;
 }
+
 .about-footer1 {
     list-style-type: none;
+    padding-left: 0%;
 }
 
 ul li {
     display: inline-block;
     margin-right: 20px;
+    font-weight: bold;
 }
-.about-link{
-    margin-left: 450px;
-}
-.about-font1{
-    padding: 25px;
+.copy-footer ul li{
+    font-weight: lighter;
+    color: #868b94;
     font-size: 15px;
+}
+
+
+.about-font1 {
+    padding: 25px;
+    font-size: 13px;
     color: gray;
 }
-.about-font2{
+
+.about-font2 {
     padding: 25px;
     font-size: 13px;
     font-weight: bold;
     color: gray;
 }
-a{
+
+a {
     text-decoration: none;
     color: black;
+}
+
+.copyright {
+    color: #868b94;
+    font-size: 15px;
 }
 </style>
