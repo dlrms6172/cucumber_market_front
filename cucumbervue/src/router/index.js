@@ -77,6 +77,11 @@ const routes = [
         name: "usedtradewritten",
         component: () => import("../views/UsedTradeForm.vue"),
     },
+    {
+        path: '/neighborcomform',
+        name: 'business',
+        component: () => import("../views/Form/NeighborComForm.vue")
+    }
 ];
 
 const router = createRouter({

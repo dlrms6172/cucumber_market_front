@@ -5,6 +5,7 @@
       <div class="cover-content">
         <h1 class="cover-title">동네 이웃들이<br>자주 가는 동네 업체</h1>
         <span class="cover-description">우리 동네 사람들이<br>이용하는 업체를 찾아보세요.</span>
+        <router-link to="/neighborcomform" class="register-button">업체 등록하기</router-link>
         <div class="cover-image">
         <span class="store-cover-image">
           <img
@@ -439,5 +440,21 @@ ul {
 img {
   overflow-clip-margin: content-box;
   overflow: clip;
+}
+
+.register-button {
+  background-color: #ff7e00;
+  color: white;
+  font-size: 18px;
+  border: none;
+  padding: 3px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 24px;
+  outline: none;
+}
+
+.register-button:hover {
+  background-color: #e56d00;
 }
 </style>
