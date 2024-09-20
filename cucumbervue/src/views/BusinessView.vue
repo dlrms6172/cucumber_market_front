@@ -256,7 +256,7 @@ import BusinessFooter from './Busiess/BusinessFooter.vue';
 
 
 export default {
-    name: 'AboutView',
+    name: 'BusinessView',
     components: { BusinessFooter, BusinessHeader },
     setup() {
         const state = ref({
