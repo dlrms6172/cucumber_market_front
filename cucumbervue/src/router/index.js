@@ -78,9 +78,9 @@ const routes = [
         component: () => import("../views/UsedTradeForm.vue"),
     },
     {
-        path: '/neighborcomform',
+        path: '/usedtradeform',
         name: 'business',
-        component: () => import("../views/Form/NeighborComForm.vue")
+        component: () => import("../views/Form/UsedTradeForm.vue")
     }
 ];
 

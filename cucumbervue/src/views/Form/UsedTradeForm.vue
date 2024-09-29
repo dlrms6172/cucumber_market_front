@@ -20,10 +20,14 @@
       </select>
     </div>
 
-    <!-- TODO. 주소api -->
-    <div class="form-group">
-      <label for="address">주소</label>
-      <input id="address" v-model="address" placeholder="주소를 입력하세요" @focus="searchAddress"/>
+    <div class="address-container">
+      <label for="postcode">주소 검색</label>
+      <div class="postcode-section">
+        <input type="text" placeholder="우편번호" :value="addresses.zonecode" readonly class="postcode-input" />
+        <button id="postcode" @click="openPostcode" class="postcode-button">검색</button>
+      </div>
+      <input type="text" :value="addresses.roadAddress" placeholder="주소" readonly class="address-input" />
+      <input type="text" v-model="addresses.detailAddress" placeholder="상세주소" class="detail-address-input" />
     </div>
 
     <div class="form-group">
@@ -48,16 +52,30 @@
 </template>
 
 <script setup>
-import {ref} from 'vue';
+import { ref } from 'vue';
 import HeaderView from "@/components/HeaderComp.vue";
 import FooterView from "@/components/FooterComp.vue";
 
 const businessName = ref('');
 const category = ref('');
-const address = ref('');
 const description = ref('');
 const images = ref([]);
 const fileInput = ref(null);
+const addresses = ref({
+  zonecode: "",
+  roadAddress: "",
+  detailAddress: ""
+});
+
+const openPostcode = () => {
+  new window.daum.Postcode({
+    oncomplete: (data) => {
+      console.log(data);
+      addresses.value.zonecode = data.zonecode;
+      addresses.value.roadAddress = data.roadAddress;
+    },
+  }).open();
+};
 
 const triggerFileInput = () => {
   fileInput.value.click();
@@ -68,24 +86,33 @@ const handleFileUpload = event => {
   for (let file of files) {
     const reader = new FileReader();
     reader.onload = (e) => {
-      images.value.push({id: file.name, url: e.target.result});
+      images.value.push({ id: file.name, url: e.target.result }); // `.value`를 사용
     };
     reader.readAsDataURL(file);
   }
 };
 
 const removeImage = index => {
-  images.value.splice(index, 1);
-};
-
-const searchAddress = () => {
-  // TODO. 주소검색api
+  images.value.splice(index, 1); // `.value`를 사용
 };
 
 const submitData = async () => {
-  // API 호출
+  // API 호출 로직 구현
 };
+
+const loadScript = (url) => {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = url;
+    script.onload = resolve;
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+};
+
+loadScript("https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js");
 </script>
+
 
 <style>
 .app-container {
@@ -158,6 +185,38 @@ h1 {
   font-size: 20px;
 }
 
-.form-group select {
-  width: 35%;
-} </style>
+.address-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.postcode-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.postcode-input {
+  flex-grow: 1;
+}
+
+.postcode-button {
+  width: 120px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.address-input {
+  width: 100%;
+}
+
+.detail-address-input {
+  width: 100%;
+  margin-top: 5px;
+}
+
+ </style>

@@ -6,7 +6,7 @@
         <h1 class="cover-title">믿을만한<br>이웃 간 중고거래</h1>
         <span class="cover-description">동네 주민들과 가깝고 따뜻한 거래를<br>지금 경험해보세요.</span>
         <div class="cover-btn">
-          <button class="title-btn"><router-link to="/usedtradewritten">내 물건 팔기</router-link></button>
+          <button class="title-btn"><router-link to="/usedtradeform">내 물건 팔기</router-link></button>
         </div>
         <div class="cover-image">
         <span class="fleamarket-cover-image">
