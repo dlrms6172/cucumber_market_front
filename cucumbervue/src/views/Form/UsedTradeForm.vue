@@ -1,27 +1,55 @@
 <template>
   <header-view></header-view>
   <div class="app-container">
-    <h1>동네 업체 등록</h1>
+    <h1>내 물건 팔기</h1>
 
     <div class="form-group">
-      <label for="businessName">업체 명</label>
-      <input id="businessName" v-model="businessName" placeholder="업체 명을 입력하세요"/>
+      <label for="businessName">제목</label>
+      <input id="businessName" v-model="businessName" placeholder="물품 명을 입력하세요."/>
     </div>
 
     <div class="form-group">
-      <label for="category">업종</label>
+      <label for="category">카테고리</label>
       <select id="category" v-model="category">
-        <option value="option1">통신판매</option>
-        <option value="option2">의류판매</option>
-        <option value="option2">광고/인쇄</option>
-        <option value="option2">클래스</option>
-        <option value="option2">학원</option>
+        <option value="option1">디지털기기</option>
+        <option value="option2">생활가전</option>
+        <option value="option3">가구/인테리어</option>
+        <option value="option4">생활/주방</option>
+        <option value="option5">유아동</option>
+        <option value="option6">유아도서</option>
+        <option value="option7">여성의류</option>
+        <option value="option8">여성잡화</option>
+        <option value="option9">남성패션/잡화</option>
+        <option value="option10">뷰티/미용</option>
+        <option value="option11">스포츠/레저</option>
+        <option value="option12">취미/게임/음반</option>
+        <option value="option13">도서</option>
+        <option value="option14">티켓/교환권</option>
+        <option value="option15">가공식품</option>
+        <option value="option16">건강기능식품</option>
+        <option value="option17">반려동물용품</option>
+        <option value="option18">식물</option>
+        <option value="option19">기타 중고물품</option>
+        <option value="option20">삽니다</option>
 
       </select>
     </div>
+    <div class="sell">
+      <p class="b-title">거래 방식</p>
+      <div>
+        <input class="sell-btn"  type="button" value="판매하기">
+        <input class="sell-btn"  type="button" value="나눔하기">
 
+      </div>
+      <input class="input" placeholder="가격을 입력해주세요." type="text">
+      <span class="textbox"></span>
+      <div class="checkbox">
+        <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">가격 제안 받기
+
+      </div>
+    </div>
     <div class="address-container">
-      <label for="postcode">주소 검색</label>
+      <label for="postcode">거래 희망 장소</label>
       <div class="postcode-section">
         <input type="text" placeholder="우편번호" :value="addresses.zonecode" readonly class="postcode-input" />
         <button id="postcode" @click="openPostcode" class="postcode-button">검색</button>
@@ -31,8 +59,8 @@
     </div>
 
     <div class="form-group">
-      <label for="description">업체 소개</label>
-      <textarea id="description" v-model="description" placeholder="업체를 소개 해보세요." rows="4"></textarea>
+      <label for="description">물품 소개</label>
+      <textarea id="description" v-model="description" placeholder="물품을 소개 해보세요." rows="4"></textarea>
     </div>
 
     <div class="image-upload">
@@ -217,6 +245,62 @@ h1 {
 .detail-address-input {
   width: 100%;
   margin-top: 5px;
+}
+.sell {
+  padding-top: 30px;
+}
+
+.input {
+  border-radius: 10px;
+  border: 1px solid #CCC;
+  color: #555;
+  box-sizing: border-box;
+  font-size: 15px;
+  height: 50px;
+  padding: 10px 0px;
+  position: relative;
+  width: 200px;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.textbox {
+  display: inline-block;
+  height: 2px;
+  position: absolute;
+  top: 185px;
+  width: 202px;
+}
+
+.checkbox {
+  margin: 15px 0px 15px 0px;
+}
+
+.sell-btn {
+  border: 1px solid #CCC;
+  border-radius: 15px;
+  background-color: white;
+  font-size: 15px;
+  width: 80px;
+  height: 40px;
+  margin: 0px 15px 15px 0px;
+}
+
+.sell-btn:active {
+  background-color: black;
+  color: white;
+}
+
+.sell-btn:visited {
+  background-color: black;
+  color: white;
+}
+.form-group select {
+  width: 50%; /* 선택박스의 너비를 줄임 */
+  padding: 8px;
+  margin-bottom: 10px;
 }
 
  </style>
