@@ -81,7 +81,14 @@ const routes = [
         path: '/usedtradeform',
         name: 'business',
         component: () => import("../views/Form/UsedTradeForm.vue")
+    },
+    {
+        path: '/detail/:id',
+        name: 'detail',
+        component: () => import("../views/Detail.vue")
     }
+
+
 ];
 
 const router = createRouter({
