@@ -86,6 +86,11 @@ const routes = [
         path: '/detail/:id',
         name: 'detail',
         component: () => import("../views/Detail.vue")
+    },
+    {
+        path: '/join',
+        name: 'join',
+        component: () => import("../views/Form/JoinForm.vue")
     }
 
 

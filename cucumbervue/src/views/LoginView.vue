@@ -8,15 +8,15 @@
     </div>
   </div>
   <div class="login-container">
-    <div class="login-button" @click="loginWithKakao">
-      <img src="/images/sns/Kakao.png" alt="카카오로 로그인">
-    </div>
+<!--    <div class="login-button" @click="loginWithKakao">-->
+<!--      <img src="/images/sns/Kakao.png" alt="카카오로 로그인">-->
+<!--    </div>-->
     <div class="login-button" @click="loginWithGoogle">
       <img src="/images/sns/Google.png" alt="구글로 로그인">
     </div>
-    <div class="login-button" @click="loginWithNaver">
-      <img src="/images/sns/Naver.png" alt="네이버로 로그인">
-    </div>
+<!--    <div class="login-button" @click="loginWithNaver">-->
+<!--      <img src="/images/sns/Naver.png" alt="네이버로 로그인">-->
+<!--    </div>-->
   </div>
 </template>
 
