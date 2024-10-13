@@ -5,57 +5,29 @@
 
     <div class="form-group">
       <label for="businessName">제목</label>
-      <input id="businessName" v-model="businessName" placeholder="물품 명을 입력하세요."/>
+      <input id="businessName" v-model="businessName" placeholder="물품 명을 입력하세요." />
     </div>
 
     <div class="form-group">
       <label for="category">카테고리</label>
       <select id="category" v-model="category">
-        <option value="option1">디지털기기</option>
-        <option value="option2">생활가전</option>
-        <option value="option3">가구/인테리어</option>
-        <option value="option4">생활/주방</option>
-        <option value="option5">유아동</option>
-        <option value="option6">유아도서</option>
-        <option value="option7">여성의류</option>
-        <option value="option8">여성잡화</option>
-        <option value="option9">남성패션/잡화</option>
-        <option value="option10">뷰티/미용</option>
-        <option value="option11">스포츠/레저</option>
-        <option value="option12">취미/게임/음반</option>
-        <option value="option13">도서</option>
-        <option value="option14">티켓/교환권</option>
-        <option value="option15">가공식품</option>
-        <option value="option16">건강기능식품</option>
-        <option value="option17">반려동물용품</option>
-        <option value="option18">식물</option>
-        <option value="option19">기타 중고물품</option>
-        <option value="option20">삽니다</option>
-
+        <option value="1">디지털기기</option>
+        <option value="2">생활가전</option>
+        <option value="3">가구/인테리어</option>
+        <!-- 카테고리 옵션 계속 추가 -->
       </select>
     </div>
+
     <div class="sell">
       <p class="b-title">거래 방식</p>
       <div>
-        <input class="sell-btn"  type="button" value="판매하기">
-        <input class="sell-btn"  type="button" value="나눔하기">
-
+        <input class="sell-btn" type="button" value="판매하기" @click="setDonationFlag(false)">
+        <input class="sell-btn" type="button" value="나눔하기" @click="setDonationFlag(true)">
       </div>
-      <input class="input" placeholder="가격을 입력해주세요." type="text">
-      <span class="textbox"></span>
+      <input class="input" v-model="price" placeholder="가격을 입력해주세요." type="text" />
       <div class="checkbox">
-        <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">가격 제안 받기
-
+        <input class="form-check-input" type="checkbox" v-model="priceNegotiationYn" value="1" /> 가격 제안 받기
       </div>
-    </div>
-    <div class="address-container">
-      <label for="postcode">거래 희망 장소</label>
-      <div class="postcode-section">
-        <input type="text" placeholder="우편번호" :value="addresses.zonecode" readonly class="postcode-input" />
-        <button id="postcode" @click="openPostcode" class="postcode-button">검색</button>
-      </div>
-      <input type="text" :value="addresses.roadAddress" placeholder="주소" readonly class="address-input" />
-      <input type="text" v-model="addresses.detailAddress" placeholder="상세주소" class="detail-address-input" />
     </div>
 
     <div class="form-group">
@@ -67,7 +39,7 @@
       <button @click="triggerFileInput" class="image-button">+</button>
       <div class="image-preview">
         <div v-for="(image, index) in images" :key="image.id" class="image-container">
-          <img :src="image.url" class="uploaded-image"/>
+          <img :src="image.url" class="uploaded-image" />
           <button @click="removeImage(index)" class="delete-button">X</button>
         </div>
       </div>
@@ -81,65 +53,63 @@
 
 <script setup>
 import { ref } from 'vue';
-import HeaderView from "@/components/HeaderComp.vue";
-import FooterView from "@/components/FooterComp.vue";
+import axios from 'axios';
 
 const businessName = ref('');
 const category = ref('');
 const description = ref('');
+const price = ref('');
+const priceNegotiationYn = ref(0);
+const donationFlag = ref(0);
 const images = ref([]);
 const fileInput = ref(null);
-const addresses = ref({
-  zonecode: "",
-  roadAddress: "",
-  detailAddress: ""
-});
 
-const openPostcode = () => {
-  new window.daum.Postcode({
-    oncomplete: (data) => {
-      console.log(data);
-      addresses.value.zonecode = data.zonecode;
-      addresses.value.roadAddress = data.roadAddress;
-    },
-  }).open();
-};
-
-const triggerFileInput = () => {
-  fileInput.value.click();
-};
-
-const handleFileUpload = event => {
+const handleFileUpload = (event) => {
   const files = event.target.files;
   for (let file of files) {
     const reader = new FileReader();
     reader.onload = (e) => {
-      images.value.push({ id: file.name, url: e.target.result }); // `.value`를 사용
+      images.value.push({ id: file.name, url: e.target.result });
     };
     reader.readAsDataURL(file);
   }
 };
 
-const removeImage = index => {
-  images.value.splice(index, 1); // `.value`를 사용
+const removeImage = (index) => {
+  images.value.splice(index, 1);
+};
+
+const setDonationFlag = (isDonation) => {
+  donationFlag.value = isDonation ? 1 : 0;
 };
 
 const submitData = async () => {
-  // API 호출 로직 구현
-};
+  const formData = new FormData();
+  formData.append('memberId', 1); // TODO. 멤버아이디 수정요망
+  formData.append('itemName', businessName.value);
+  formData.append('itemInfo', description.value);
+  formData.append('donationFlag', donationFlag.value);
+  formData.append('categoryId', category.value);
+  formData.append('priceNegotiationYn', priceNegotiationYn.value);
+  formData.append('price', price.value);
 
-const loadScript = (url) => {
-  return new Promise((resolve, reject) => {
-    const script = document.createElement('script');
-    script.src = url;
-    script.onload = resolve;
-    script.onerror = reject;
-    document.head.appendChild(script);
-  });
-};
+  for (let i = 0; i < fileInput.value.files.length; i++) {
+    formData.append('files', fileInput.value.files[i]);
+  }
 
-loadScript("https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js");
+  try {
+    const response = await axios.post('http://localhost:8080/items', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    });
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+};
 </script>
+
 
 
 <style>
@@ -213,39 +183,6 @@ h1 {
   font-size: 20px;
 }
 
-.address-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.postcode-section {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.postcode-input {
-  flex-grow: 1;
-}
-
-.postcode-button {
-  width: 120px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.address-input {
-  width: 100%;
-}
-
-.detail-address-input {
-  width: 100%;
-  margin-top: 5px;
-}
 .sell {
   padding-top: 30px;
 }
@@ -264,14 +201,6 @@ h1 {
 
 .input:focus {
   outline: none;
-}
-
-.textbox {
-  display: inline-block;
-  height: 2px;
-  position: absolute;
-  top: 185px;
-  width: 202px;
 }
 
 .checkbox {
@@ -298,7 +227,7 @@ h1 {
   color: white;
 }
 .form-group select {
-  width: 50%; /* 선택박스의 너비를 줄임 */
+  width: 50%;
   padding: 8px;
   margin-bottom: 10px;
 }
