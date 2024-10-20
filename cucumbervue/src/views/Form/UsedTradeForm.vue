@@ -66,6 +66,7 @@ const donationFlag = ref(0);
 const images = ref([]);
 const fileInput = ref(null);
 
+
 const handleFileUpload = (event) => {
   const files = event.target.files;
   for (let file of files) {
