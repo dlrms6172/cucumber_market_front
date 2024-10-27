@@ -21,58 +21,35 @@
 </template>
 
 <script>
-import { onMounted, ref } from 'vue';
-import { app } from '@/firebaseConfig';
-import { getAuth, signInWithRedirect, GoogleAuthProvider } from 'firebase/auth';
-import HeaderView from '@/components/HeaderComp.vue'
-
-
+import router from '@/router';
+import axios from 'axios';
+import HeaderView from '@/components/HeaderComp.vue';
 
 export default {
-  components: {HeaderView},
+  components: { HeaderView },
   setup() {
-    const auth = getAuth(app);
-    const provider = new GoogleAuthProvider();
-
     function loginWithGoogle() {
-      signInWithRedirect(auth, provider);
+      axios.get('https://localhost:8080/user/signin', {
+        params: {
+          platform: 'google'
+        }
+      }).then(response => {
+        const signInPage = response.data.data.signInPage;
+        window.location.href = signInPage;
+        router.push('/');
+      }).catch(error => {
+        console.error('Login failed:', error);
+        alert('로그인에 실패하였습니다: ' + error.message);
+      });
     }
 
-    const isKakaoInitialized = ref(false);
-
-    onMounted(() => {
-      if (!window.Kakao.isInitialized()) {
-        window.Kakao.init('7bd42029832e37ace5ab332fcde915fc');
-        isKakaoInitialized.value = true;
-      }
-    });
-
-    const loginWithKakao = () => {
-      if (isKakaoInitialized.value) {
-        window.Kakao.Auth.login({
-          success: function(authObj) {
-            alert(JSON.stringify(authObj));
-            // success
-          },
-          fail: function(err) {
-            alert(JSON.stringify(err));
-          }
-        });
-      }
-    };
-
-
-    const loginWithNaver = async () => {
-      const clientId = '2Ok2L7BSsUw2jcTvIapZ';
-      const redirectUri = 'http://localhost:8080/';
-      const state = 'RANDOM_STATE_STRING';
-      window.location.href = `https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&state=${state}`;
-    };
-
-    return { loginWithKakao,loginWithGoogle,loginWithNaver };
+    return { loginWithGoogle };
   }
 }
 </script>
+
+
+
 
 <style scoped>
 body, html {

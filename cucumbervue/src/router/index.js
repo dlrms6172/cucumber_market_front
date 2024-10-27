@@ -88,9 +88,14 @@ const routes = [
         component: () => import("../views/Detail.vue")
     },
     {
-        path: '/join',
-        name: 'join',
-        component: () => import("../views/Form/JoinForm.vue")
+        path: '/modProfile',
+        name: 'modProfile',
+        component: () => import("../views/Form/ProfileModForm.vue")
+    },
+    {
+        path: '/profile',
+        name: 'profile',
+        component: () => import("../views/ProfileView.vue")
     }
 
 
