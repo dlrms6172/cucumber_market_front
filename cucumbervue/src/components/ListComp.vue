@@ -4,48 +4,54 @@
 
 
         <div class="post-img">
-            <img src="/images/Detail/detail1.webp" class="post">
+            <!-- <img src="/images/Detail/detail1.webp" class="post"> -->
+            <img :src="imageUrls" alt="대표 이미지" class="post">
+
         </div>
         <div class="profile-1">
             <div class="profile-1-1">
-                <img src="/images/Detail/profile.png" class="profile-img">
+                <!-- <img src="/images/Detail/profile.png" class="profile-img"> -->
+                <img :src="profileimage" class="profile-img">
+
             </div>
             <div class="profile-1-2">
                 <div class="profile-wrap">
                     <div class="profile-left">
-                        <p class="font-bold">{{ item[$route.params.id].nickname }}</p>
+                        <p class="font-bold">{{ item[$route.params.id].memberId }}</p>
                         <p class="font-line">{{ item[$route.params.id].town }}</p>
 
                     </div>
-                    <div class="profile-right">
-                        <div class="temperature">
-                            <p class="temperture-num">{{ item[$route.params.id].temperature }}</p>
-                            <progress class="temp-bar line-hei" max="100" min="0" value="35"></progress>
-                            <div>
-                                <p class="fontcol-gray temp-font">매너온도</p>
-                            </div>
+                </div>
+                <div class="profile-right">
+                    <div class="temperature">
+                        <p class="temperture-num">{{ item[$route.params.id].mannersTemperature }}</p>
+                        <progress class="temp-bar line-hei" max="100" min="0" value="35"></progress>
+                        <div>
+                            <p class="fontcol-gray temp-font">매너온도</p>
                         </div>
                     </div>
-                    <div>
-                        
-                    </div>
-                    <div class="temperatuer-bar">
-                    </div>
+                </div>
+                <div>
+
+                </div>
+                <div class="temperatuer-bar">
                 </div>
             </div>
-
         </div>
+
+
         <hr>
         <div>
-            <p class="font-bold font-size20">{{ item[$route.params.id].product_name }}</p>
-            <p class="font-size15 fontcol-gray">{{ item[$route.params.id].category }}</p>
-            <p class="font-bold">{{ item[$route.params.id].product_price}}</p>
-            <p>{{ item[$route.params.id].content }}</p>
-            <p class="font-size15 fontcol-gray">관심 {{ item[$route.params.id].like }}  ∙ 채팅 {{ item[$route.params.id].chat }} ∙ 조회 {{ item[$route.params.id].view }}</p>
+            <p class="font-bold font-size20">{{ item[$route.params.id].itemName }}</p>
+            <p class="font-size15 fontcol-gray">{{ item[$route.params.id].categoryId }} ∙ {{ item[$route.params.id].postDate }}시간전</p>
+            <p class="font-bold">{{ item[$route.params.id].price }}</p>
+            <p>{{ item[$route.params.id].iteminfo }}</p>
+            <p class="font-size15 fontcol-gray">관심 {{ item[$route.params.id].likeCount }} ∙ 조회 {{
+                item[$route.params.id].viewCount }}</p>
         </div>
         <div class="common-buttons">
-            <button type="button"  @click="updateData">수정</button>&nbsp;
-            <button type="button"  @click="deleteData">삭제</button>&nbsp;
+            <button type="button" @click="updateData">수정</button>&nbsp;
+            <button type="button" @click="deleteData">삭제</button>&nbsp;
         </div>
         <hr>
         <div>
@@ -107,20 +113,39 @@
 </template>
 <script>
 import ItemList from '@/data/ItemList';
+// import axios from 'axios';
+
+// const BASE_URL = "https://api.oi-market.kro.kr/";
+
 export default {
     name: 'ListComp',
     props: {
         item: Array
     },
+    // mounted(){
+    //     this.getData()
+    // },
+
     data() {
         const index = this.$route.params.id
         return {
-            ItemList:ItemList[index],
+            ItemList: ItemList[index],
             index: index,
         }
     },
     methods: {
-        deleteData(){
+        // getData(){
+        //     axios
+        //         .get(BASE_URL + "/item/${itemId}")
+        //         .then((res) => {
+        //             console.log("성공", res);
+        //     })
+        //     .catch((error) => {
+        //         console.log("실패", error);
+        //     })
+
+        // },
+        deleteData() {
             if (!confirm("삭제하시겠습니까?")) return
 
             ItemList.splice(this.index, 1)
@@ -128,7 +153,7 @@ export default {
                 path: '/usedtrade'
             })
         },
-        updateData(){
+        updateData() {
             this.$router.push({
                 name: 'usedtradeform',
                 params: {
@@ -136,7 +161,7 @@ export default {
                 }
             })
         },
-        
+
     }
     // fnUpdate() {
     //     this.$router.push({
@@ -151,7 +176,7 @@ export default {
     //     this.$route.push({
     //         path:"/"
     //     })
-            
+
     // }
 }
 </script>
@@ -239,15 +264,22 @@ export default {
 .line-heii {
     line-height: 100%;
 }
+
 .profile-wrap {
     display: flex;
 }
+
 .temperture-num {
-    margin-left: 450px;
+    margin-left: 600px;
 }
+.temperature{
+    margin-top: -55px;
+}
+
 .temp-bar {
     float: right;
 }
+
 .temp-font {
     text-align: right;
     margin-top: 40px;

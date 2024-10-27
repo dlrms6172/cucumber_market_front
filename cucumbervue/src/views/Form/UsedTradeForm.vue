@@ -57,6 +57,8 @@ import axios from 'axios';
 import HeaderView from '@/components/HeaderComp.vue'
 import FooterView from '@/components/FooterComp.vue'
 
+
+
 const businessName = ref('');
 const category = ref('');
 const description = ref('');
@@ -65,6 +67,7 @@ const priceNegotiationYn = ref(0);
 const donationFlag = ref(0);
 const images = ref([]);
 const fileInput = ref(null);
+
 
 
 const handleFileUpload = (event) => {
