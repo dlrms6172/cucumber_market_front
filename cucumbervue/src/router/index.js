@@ -96,6 +96,21 @@ const routes = [
         path: '/profile',
         name: 'profile',
         component: () => import("../views/ProfileView.vue")
+    },
+    {
+        path: '/wishlist',
+        name: 'wishlist',
+        component: () => import("../views/WishListView.vue")
+    },
+    {
+        path: '/purchasehistory',
+        name: 'purchasehistory',
+        component: () => import("../views/PurchaseHistoryView.vue")
+    },
+    {
+        path: '/saleshistory',
+        name: 'saleshistory',
+        component: () => import("../views/SalesHistoryView.vue")
     }
 
 

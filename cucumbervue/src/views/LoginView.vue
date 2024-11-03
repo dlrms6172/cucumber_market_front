@@ -29,7 +29,7 @@ export default {
   components: { HeaderView },
   setup() {
     function loginWithGoogle() {
-      axios.get('https://localhost:8080/user/signin', {
+      axios.get('https://api.oi-market.kro.kr/user/signin', {
         params: {
           platform: 'google'
         }

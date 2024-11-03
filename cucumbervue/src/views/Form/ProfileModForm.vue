@@ -32,6 +32,7 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 import HeaderView from '@/components/HeaderComp.vue';
 import FooterView from '@/components/FooterComp.vue';
 import axios from 'axios';
@@ -48,6 +49,8 @@ const addresses = ref({
   detailAddress: ""
 });
 
+const router = useRouter();
+
 const openPostcode = () => {
   new window.daum.Postcode({
     oncomplete: (data) => {
@@ -58,7 +61,7 @@ const openPostcode = () => {
 };
 
 function onSubmit() {
-  const url = "http://localhost:8080/user/profile";
+  const url = "https://api.oi-market.kro.kr/user/profile";
   const payload = {
     memberId: form.value.id,
     snsId: 0,
@@ -70,6 +73,7 @@ function onSubmit() {
       .then(response => {
         console.log('응답:', response.data);
         alert('프로필 수정이 완료되었습니다.');
+        router.push('/');
       })
       .catch(error => {
         console.error('오류 발생:', error);
@@ -77,6 +81,7 @@ function onSubmit() {
       });
 }
 </script>
+
 
 <style scoped>
 .signup-form {

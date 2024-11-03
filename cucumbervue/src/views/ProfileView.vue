@@ -2,15 +2,30 @@
   <header-view></header-view>
   <div class="outer-container">
     <h1 class="title">나의 당근</h1>
-    <div class="profile-container">
-      <router-link to="/modProfile" class="menu-item">
-        <h2>프로필 수정</h2>
+    <hr class="section-divider">
+    <div class="profile-section">
+      <img src="/images/Detail/profile.png" alt="프로필 이미지" class="profile-image">
+      <h2 class="nickname">닉네임</h2>
+    </div>
+    <hr class="section-divider">
+    <div class="icon-row">
+      <router-link to="/saleshistory" class="icon-item">
+        <img src="/images/main/rebranded-icon-story-3.svg" alt="판매 내역">
+        <h2>판매 내역</h2>
       </router-link>
-      <hr>
-      <router-link to="/interests" class="menu-item">
-        <h2>관심목록</h2>
+      <router-link to="/purchasehistory" class="icon-item">
+        <img src="/images/main/rebranded-icon-story-3.svg" alt="구매 내역">
+        <h2>구매 내역</h2>
+      </router-link>
+      <router-link to="/wishlist" class="icon-item">
+        <img src="/images/main/rebranded-icon-story-3.svg" alt="관심 목록">
+        <h2>관심 목록</h2>
       </router-link>
     </div>
+    <hr class="section-divider">
+    <router-link to="/modProfile" class="menu-item">
+      <h2>프로필 수정</h2>
+    </router-link>
   </div>
   <footer-view></footer-view>
 </template>
@@ -29,8 +44,8 @@ export default {
 
 <style>
 .outer-container {
-  border: 2px solid black;
-  width: 25%;
+  border: 1px solid black;
+  width: 32%;
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
@@ -40,13 +55,45 @@ export default {
   text-align: center;
 }
 
-.profile-container {
+.section-divider {
+  border: none;
+  height: 1px;
+  background-color: lightgrey;
+  margin: 20px 0;
+}
+
+.profile-section {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
-  width: 100%;
+}
+
+.profile-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.nickname {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.icon-row {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px 0;
+}
+
+.icon-item {
+  text-align: center;
+}
+
+.icon-item img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 5px;
 }
 
 .menu-item h2 {
@@ -67,4 +114,21 @@ hr {
   width: 90%;
   border-color: grey;
 }
+.title {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.icon-item h2 {
+  font-size: 19px;
+}
+
+.menu-item h2 {
+  font-weight: 700;
+  font-size: 18px;
+  margin: 10px 0;
+  text-align: center;
+}
+
 </style>
