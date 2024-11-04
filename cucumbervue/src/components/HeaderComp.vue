@@ -14,16 +14,19 @@
     </nav>
     <div class="search-chat">
       <input type="text" placeholder="물품이나 동네를 검색해보세요">
-      <router-link to="/login" class="login-button">로그인</router-link>
+      <router-link v-if="!userLoggedIn" to="/login" class="login-button">로그인</router-link>
+      <div v-if="userLoggedIn" class="user-profile">
+        <router-link to="/profile">
+          <img :src="userInfo.profileImg" alt="프로필 이미지">
+        </router-link>
+        <span>{{ userInfo.memberId }}</span>
+      </div>
     </div>
   </header>
 </template>
 
-
-
-
 <script setup>
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 
 const menuItems = [
   { name: '중고거래', link: '/usedtrade' },
@@ -34,10 +37,23 @@ const menuItems = [
 ];
 const activeTab = ref('중고거래');
 
+const userInfo = computed(() => {
+  const userString = localStorage.getItem('userInfo');
+  try {
+    return JSON.parse(userString);
+  } catch (e) {
+    return null;
+  }
+});
+
+const userLoggedIn = computed(() => !!userInfo.value);
+
 function setActive(itemName) {
   activeTab.value = itemName;
 }
 </script>
+
+
 
 
 <style scoped>
@@ -110,6 +126,15 @@ function setActive(itemName) {
 
 .login-button:hover {
   background-color: #f0f0f0;
+}
+
+.user-profile img {
+  width: 30px;
+  border-radius: 50%;
+}
+
+.user-profile span {
+  margin-left: 10px;
 }
 </style>
 
