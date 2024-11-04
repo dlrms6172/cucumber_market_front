@@ -4,8 +4,8 @@
     <h1 class="title">나의 당근</h1>
     <hr class="section-divider">
     <div class="profile-section">
-      <img src="/images/Detail/profile.png" alt="프로필 이미지" class="profile-image">
-      <h2 class="nickname">닉네임</h2>
+      <img :src="userProfile.image" alt="프로필 이미지" class="profile-image">
+      <h2 class="nickname">{{ userProfile.name }}</h2>
     </div>
     <hr class="section-divider">
     <div class="icon-row">
@@ -26,11 +26,15 @@
     <router-link to="/modProfile" class="menu-item">
       <h2>프로필 수정</h2>
     </router-link>
+    <router-link to="/" @click="logout" class="menu-item">
+      <h2>로그아웃</h2>
+    </router-link>
   </div>
   <footer-view></footer-view>
 </template>
 
 <script>
+import axios from 'axios';
 import FooterView from "@/components/FooterComp.vue";
 import HeaderView from "@/components/HeaderComp.vue";
 
@@ -38,6 +42,49 @@ export default {
   components: {
     FooterView,
     HeaderView
+  },
+  data() {
+    return {
+      userProfile: {
+        image: '/images/Detail/profile.png',
+        name: '닉네임'
+      }
+    }
+  },
+  mounted() {
+    this.getUserProfile();
+  },
+  methods: {
+    getUserProfile() {
+      const userInfoJSON = localStorage.getItem('userInfo');
+      if (userInfoJSON) {
+        try {
+          const userInfo = JSON.parse(userInfoJSON);
+          if (userInfo && userInfo.memberId) {
+            axios.get(`https://api.oi-market.kro.kr/user/profile`, {
+              headers: {
+                memberId: userInfo.memberId
+              }
+            }).then(response => {
+              const data = response.data.data;
+              this.userProfile.image = data.image || '/images/Detail/profile.png';
+              this.userProfile.name = data.name || '닉네임';
+            }).catch(error => {
+              console.error('호출 실패 :', error);
+            });
+          }
+        } catch (e) {
+          console.error('파싱 에러', e);
+        }
+      } else {
+        // userInfo 값이 없을때
+        console.log('유저 정보를 가져올 수 없습니다.');
+      }
+    },
+    logout() {
+      localStorage.removeItem('userInfo');
+      this.$router.push('/');
+    }
   }
 }
 </script>
