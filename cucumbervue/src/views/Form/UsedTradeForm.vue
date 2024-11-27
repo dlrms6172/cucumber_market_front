@@ -41,6 +41,7 @@
         <div v-for="(image, index) in images" :key="image.id" class="image-container">
           <img :src="image.url" class="uploaded-image" />
           <button @click="removeImage(index)" class="delete-button">X</button>
+          <input type="radio" v-model="mainImageId" :value="image.id">
         </div>
       </div>
       <input type="file" id="image-file" ref="fileInput" @change="handleFileUpload" multiple hidden>
@@ -54,10 +55,8 @@
 <script setup>
 import { ref } from 'vue';
 import axios from 'axios';
-import HeaderView from '@/components/HeaderComp.vue'
-import FooterView from '@/components/FooterComp.vue'
-
-
+import HeaderView from '@/components/HeaderComp.vue';
+import FooterView from '@/components/FooterComp.vue';
 
 const businessName = ref('');
 const category = ref('');
@@ -66,23 +65,34 @@ const price = ref('');
 const priceNegotiationYn = ref(0);
 const donationFlag = ref(0);
 const images = ref([]);
+const mainImageId = ref(null);
 const fileInput = ref(null);
-
-
 
 const handleFileUpload = (event) => {
   const files = event.target.files;
   for (let file of files) {
+    const uniqueFileName = `img_${Date.now()}_${Math.random().toString(36).substring(2, 8)}_${file.name}`;
     const reader = new FileReader();
     reader.onload = (e) => {
-      images.value.push({ id: file.name, url: e.target.result });
+      images.value.push({ id: uniqueFileName, url: e.target.result });
     };
     reader.readAsDataURL(file);
   }
 };
 
+const triggerFileInput = () => {
+  fileInput.value.click();
+};
+
 const removeImage = (index) => {
+  if (images.value[index].id === mainImageId.value) {
+    mainImageId.value = null; // 대표 이미지 초기화
+  }
   images.value.splice(index, 1);
+
+  if (images.value.length > 0 && mainImageId.value === null) {
+    mainImageId.value = images.value[0].id; // 삭제 후 첫 번째 이미지를 대표 이미지로 설정
+  }
 };
 
 const setDonationFlag = (isDonation) => {
@@ -90,24 +100,27 @@ const setDonationFlag = (isDonation) => {
 };
 
 const submitData = async () => {
-  const formData = new FormData();
-  formData.append('memberId', 1); // TODO. 멤버아이디 수정요망
-  formData.append('itemName', businessName.value);
-  formData.append('itemInfo', description.value);
-  formData.append('donationFlag', donationFlag.value);
-  formData.append('categoryId', category.value);
-  formData.append('priceNegotiationYn', priceNegotiationYn.value);
-  formData.append('price', price.value);
-
-  for (let i = 0; i < fileInput.value.files.length; i++) {
-    formData.append('files', fileInput.value.files[i]);
+  if (!mainImageId.value && images.value.length > 0) {
+    mainImageId.value = images.value[0].id; // 대표 이미지가 없으면 첫 번째 이미지를 설정
   }
+
+  const formData = new FormData();
+  const imageList = images.value.map((image) => image.id); // 이미지 파일명 리스트 생성
+
+  formData.append('businessName', businessName.value);
+  formData.append('category', category.value);
+  formData.append('description', description.value);
+  formData.append('price', price.value);
+  formData.append('priceNegotiationYn', priceNegotiationYn.value);
+  formData.append('donationFlag', donationFlag.value);
+  formData.append('imageList', JSON.stringify(imageList));
+  formData.append('mainImageId', mainImageId.value);
 
   try {
     const response = await axios.post('http://localhost:8080/items', formData, {
       headers: {
-        'Content-Type': 'multipart/form-data'
-      }
+        'Content-Type': 'multipart/form-data',
+      },
     });
     console.log(response.data);
   } catch (error) {
@@ -115,6 +128,8 @@ const submitData = async () => {
   }
 };
 </script>
+
+
 
 
 

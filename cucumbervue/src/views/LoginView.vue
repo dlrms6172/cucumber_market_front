@@ -21,7 +21,6 @@
 </template>
 
 <script>
-import router from '@/router';
 import axios from 'axios';
 import HeaderView from '@/components/HeaderComp.vue';
 
@@ -36,7 +35,6 @@ export default {
       }).then(response => {
         const signInPage = response.data.data.signInPage;
         window.location.href = signInPage;
-        router.push('/');
       }).catch(error => {
         console.error('Login failed:', error);
         alert('로그인에 실패하였습니다: ' + error.message);
