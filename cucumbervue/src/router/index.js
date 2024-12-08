@@ -111,6 +111,21 @@ const routes = [
         path: '/saleshistory',
         name: 'saleshistory',
         component: () => import("../views/SalesHistoryView.vue")
+    },
+    {
+        path: '/readviewcomp',
+        name: 'readviewcomp',
+        component: () => import("..//components/ReadViewComp.vue")
+    },
+    {
+        path: '/createviewcomp/:contentId?',
+        name: 'createviewcomp',
+        component: () => import("..//components/CreateViewComp.vue")
+    },
+    {
+        path: '/detailviewcomp/:contentId',
+        name: 'detviewcomp',
+        component: () => import("..//components/DetViewComp.vue")
     }
 
 

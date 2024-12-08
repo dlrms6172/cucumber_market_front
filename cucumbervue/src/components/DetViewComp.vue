@@ -1,61 +1,35 @@
 <template>
-
-    <div class="body-500">
-
-
-        <div class="post-img">
-            <!-- <img src="/images/Detail/detail1.webp" class="post"> -->
-            <img :src="imageUrls" alt="대표 이미지" class="post">
-
+    <HeaderComp></HeaderComp>
+    <div class="body-400px">
+        <div class="det-itemimage">
+            <img :alt="item.itemImage" :src="item.itemImageUrls">
         </div>
-        <div class="profile-1">
-            <div class="profile-1-1">
-                <!-- <img src="/images/Detail/profile.png" class="profile-img"> -->
-                <img :src="profileimage" class="profile-img">
-
+        <div class="profile">
+            <div>
+                <img src="/images/Detail/profile.png" class="profile-img">
             </div>
-            <div class="profile-1-2">
-                <div class="profile-wrap">
-                    <div class="profile-left">
-                        <p class="font-bold">{{ item[$route.params.id].memberId }}</p>
-                        <p class="font-line">{{ item[$route.params.id].town }}</p>
-
-                    </div>
-                </div>
-                <div class="profile-right">
-                    <div class="temperature">
-                        <p class="temperture-num">{{ item[$route.params.id].mannersTemperature }}</p>
-                        <progress class="temp-bar line-hei" max="100" min="0" value="35"></progress>
-                        <div>
-                            <p class="fontcol-gray temp-font">매너온도</p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-
-                </div>
-                <div class="temperatuer-bar">
-                </div>
+            <div class="member-for">
+                <p class="font-bold">{{ item.memberId }}</p>
+                <p>{{ item.town }}</p>
             </div>
-        </div>
 
 
-        <hr>
-        <div>
-            <p class="font-bold font-size20">{{ item[$route.params.id].itemName }}</p>
-            <p class="font-size15 fontcol-gray">{{ item[$route.params.id].categoryId }} ∙ {{ item[$route.params.id].postDate }}시간전</p>
-            <p class="font-bold">{{ item[$route.params.id].price }}</p>
-            <p>{{ item[$route.params.id].iteminfo }}</p>
-            <p class="font-size15 fontcol-gray">관심 {{ item[$route.params.id].likeCount }} ∙ 조회 {{
-                item[$route.params.id].viewCount }}</p>
-        </div>
-        <div class="common-btn">
-            <button class="list-btn" type="button" @click="updateData">수정</button>&nbsp;
-            <button class="list-btn" type="button" @click="deleteData">삭제</button>&nbsp;
+
         </div>
         <hr>
         <div>
-            <p class="font-bold">당근 인기중고</p>
+            <div class="font-bold">{{ item.itemName }}</div>
+            <div class="font-size15 fontcol-gray">{{ item.categoryId }} ∙ {{ item.postDate }}시간전</div>
+            <div class="martop-15">{{ item.price }}</div>
+            <div class="martop-15">{{ item.iteminfo }}</div>
+            <div class="martop-15 marbot-15 font-size15 fontcol-gray">관심 {{ item.likeCount }} ∙ 조회 {{
+                item.viewCount }}</div>
+            <button @click="updateData">수정</button>
+            <button @click="deleteData(index)">삭제</button>
+        </div>
+
+        <div>
+            <p class="font-bold martop-15">당근 인기중고</p>
             <div class="fam-1">
                 <div class="fam-2">
                     <img src="/images/Detail/detail2.webp" class="fam-used margin-right-20px">
@@ -103,140 +77,112 @@
                     <p class="font-size15 fontcol-gray line-hei">관심 25 ∙ 채팅 10</p>
                 </div>
             </div>
-
-
-
-
-
         </div>
     </div>
+    <FooterComp></FooterComp>
 </template>
+
 <script>
-import ItemList from '@/data/ItemList';
-// import axios from 'axios';
+import item from '@/data/ItemList';
+import HeaderComp from '@/components/HeaderComp.vue';
+import FooterComp from '@/components/FooterComp.vue';
 
 const BASE_URL = "https://api.oi-market.kro.kr/";
 
 export default {
-    name: 'ListComp',
-    props: {
-        item: Array
-    },
-    // mounted(){
-    //     this.getData()
-    // },
-
+    name: 'DetViewComp',
+    components: { HeaderComp, FooterComp },
     data() {
-        const index = this.$route.params.id
+        const index = this.$route.params.contentId
         return {
-            ItemList: ItemList[index],
-            index: index,
+            item: item[index],
+            index: index
         }
     },
     methods: {
-        getData(){
+        getData() {
             this.$axios
-                .get(BASE_URL + "/item/${itemId}")
+                .get(BASE_URL + "/item/${itmeId}")
                 .then((res) => {
                     console.log("성공", res);
-            })
-            .catch((error) => {
-                console.log("실패", error);
-            })
-
+                })
+                .catch((error) => {
+                    console.log("실패", error);
+                })
         },
+
+        // 특정인덱스인 값을 삭제할 때 사용함
         deleteData() {
             if (!confirm("삭제하시겠습니까?")) return
 
-            ItemList.splice(this.index, 1)
+            item.splice(this.index, 1)
             this.$router.push({
-                path: '/usedtrade'
+                path: "/readviewcomp"
             })
-            alert('삭제되었습니다.');
         },
 
-        
         updateData() {
             this.$router.push({
-                name: 'usedtradeform',
+                name: 'CreateViewComp',
                 params: {
-                    id: this.index
+                    contentId: this.index
                 }
             })
-        },
-
-    }
-    // fnUpdate() {
-    //     this.$router.push({
-    //         name: 'usedtradeform',
-    //         params:{
-    //             Id: this.index
-    //         }
-    //     })
-    // },
-    // fnDelete() {
-    //     ItemList.splice(this.index,1)
-    //     this.$route.push({
-    //         path:"/"
-    //     })
-
-    // }
+        }
+    },
 }
 </script>
-
 <style scoped>
-.body-500 {
+.body-400px {
     padding-left: 400px;
     padding-right: 400px;
 }
 
-.post-img {
-    width: 100%;
-    height: auto;
-    padding-bottom: 20px;
+.det-itemimage {
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
 }
 
-.post {
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
+.profile-img {
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+}
+
+.profile {
+    display: flex;
+}
+
+.member {
+    display: flex;
+}
+
+.member-for {
+    margin-top: 10px;
+    margin-left: 10px;
+    line-height: 50%;
 }
 
 .font-bold {
     font-weight: bold;
 }
 
-.profile-img {
-    width: 50px;
-    height: 50px;
-    border-radius: 70%;
-}
-
-.profile-1 {
-    display: flex;
-}
-
-.font-line {
-    margin-top: -20px;
-}
-
-.profile-1-2 {
-    margin-left: 10px;
-    font-size: 15px;
-}
-
-.font-size20 {
-    font-size: 20px;
-}
-
-.font-size15 {
-    font-size: 13px;
-}
-
 .fontcol-gray {
     color: #868e96;
 }
 
+.font-size15 {
+    font-size: 15px;
+}
+
+.martop-15 {
+    margin-top: 15px;
+}
+
+.marbot-15 {
+    margin-bottom: 15px;
+}
 .fam-used {
     width: 210px;
     height: 210px;
@@ -273,31 +219,5 @@ export default {
     display: flex;
 }
 
-.temperture-num {
-    margin-left: 600px;
-}
-.temperature{
-    margin-top: -55px;
-}
 
-.temp-bar {
-    float: right;
-}
-
-.temp-font {
-    text-align: right;
-    margin-top: 40px;
-    font-size: 13px;
-}
-.list-btn {
-    border-radius: 20px;
-    background-color: #ff6f0f;
-    border: none;
-    color: white;
-    width: 60px;
-    
-}
-.common-btn {
-    text-align: right;
-}
 </style>
