@@ -34,7 +34,7 @@
                 <div class="cards-wrap">
                     <article class="card-top" v-for="(item, i) in item" :key=i @click="detail(i)">
                         <div class="card-photo">
-                            <img :alt="item.writer" :src="item.image">
+                            <img :src="item.image">
                         </div>
                         <h5 class="card-title">{{ item.itemName }}</h5>
                         <div class="card-price">{{ item.price }}</div>
@@ -46,7 +46,6 @@
                     </article>
                 </div>
 
-                <!-- <button><router-link to="/createviewcomp">글쓰기</router-link></button> -->
 
             </div>
 
@@ -110,32 +109,32 @@
 </template>
 
 <script>
-// import item from '../data/ItemList'
+import item from '../data/ItemList' //데이터 부분
 import FooterView from "@/components/FooterComp.vue";
 import HeaderView from "@/components/HeaderComp.vue";
 
 
-const BASE_URL = "https://api.oi-market.kro.kr/";
+// const BASE_URL = "https://api.oi-market.kro.kr/"; axios 설정시 활성화
 
 export default {
     name: 'ReadViewComp',
     components: { HeaderView, FooterView },
-    // data() {
-    //     return {
-    //         item: item
-    //     }
-    // },
+    data() {
+        return {
+            item: item
+        } //데이터 부분
+    },
     methods: {
-        getData() {
-            this.$axios
-                .get(BASE_URL + "/item")
-                .then((res) => {
-                    console.log("성공", res);
-                })
-                .catch((error) => {
-                    console.log("실패", error);
-                })
-        },
+        // getData() {
+        //     this.$axios
+        //         .get(BASE_URL + "/item")
+        //         .then((res) => {
+        //             console.log("성공", res);
+        //         })
+        //         .catch((error) => {
+        //             console.log("실패", error);
+        //         })
+        // },    axios 설정시 활성화
         
         detail(i) {
             this.$router.push({
