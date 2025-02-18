@@ -8,15 +8,9 @@
     </div>
   </div>
   <div class="login-container">
-<!--    <div class="login-button" @click="loginWithKakao">-->
-<!--      <img src="/images/sns/Kakao.png" alt="카카오로 로그인">-->
-<!--    </div>-->
     <div class="login-button" @click="loginWithGoogle">
       <img src="/images/sns/Google.png" alt="구글로 로그인">
     </div>
-<!--    <div class="login-button" @click="loginWithNaver">-->
-<!--      <img src="/images/sns/Naver.png" alt="네이버로 로그인">-->
-<!--    </div>-->
   </div>
 </template>
 
@@ -29,11 +23,10 @@ export default {
   setup() {
     function loginWithGoogle() {
       axios.get('https://api.oi-market.kro.kr/user/signin', {
-        params: {
-          platform: 'google'
-        }
+        params: { platform: 'google' }
       }).then(response => {
         const signInPage = response.data.data.signInPage;
+        console.log('Redirect to:', signInPage);
         window.location.href = signInPage;
       }).catch(error => {
         console.error('Login failed:', error);
@@ -45,9 +38,6 @@ export default {
   }
 }
 </script>
-
-
-
 
 <style scoped>
 body, html {
@@ -100,4 +90,3 @@ body, html {
   text-align: center;
 }
 </style>
-
