@@ -68,6 +68,14 @@ function initTokensFromURL() {
   }
 }
 
+function loadUserInfoFromStorage() {
+  const storedUser = localStorage.getItem("userInfo");
+  if (storedUser) {
+    userInfo.value = JSON.parse(storedUser);
+    isLoggedIn.value = true;
+  }
+}
+
 async function fetchUserInfo() {
   const accessToken = localStorage.getItem("accessToken");
   console.log("[API 요청] 액세스 토큰 사용하여 프로필 조회");
@@ -87,6 +95,7 @@ async function fetchUserInfo() {
     if (response.data.resultCode === 200) {
       userInfo.value = response.data.data;
       isLoggedIn.value = true;
+      localStorage.setItem("userInfo", JSON.stringify(response.data.data)); // 유저 정보 저장
     } else {
       console.error("[API 응답 오류] 사용자 정보 불러오기 실패:", response.data.resultMsg);
       await refreshAccessToken();
@@ -127,6 +136,7 @@ function logout() {
   console.log("[로그아웃] 토큰 제거 및 로그아웃");
   localStorage.removeItem("accessToken");
   localStorage.removeItem("refreshToken");
+  localStorage.removeItem("userInfo");
   userInfo.value = null;
   isLoggedIn.value = false;
   router.push("/login");
@@ -138,9 +148,11 @@ function setActive(name) {
 
 onMounted(() => {
   initTokensFromURL();
+  loadUserInfoFromStorage();
   fetchUserInfo();
 });
 </script>
+
 
 
 <style scoped>
