@@ -70,7 +70,7 @@ export default [
     likeCount: "40",
     viewCount: "100",
     chat: "2",
-    itemId: 2,
+    itemId: 3,
     postDate : "20",
   },
 ];

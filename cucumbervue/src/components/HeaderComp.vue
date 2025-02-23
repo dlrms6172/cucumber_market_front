@@ -42,7 +42,7 @@ import axios from "axios";
 import { useRouter } from "vue-router";
 
 const menuItems = [
-  { name: "중고거래", link: "/usedtrade" },
+  { name: "중고거래", link: "/readviewcomp" },
   { name: "동네업체", link: "/neighborcom" },
   { name: "알바", link: "/partjob" },
   { name: "부동산", link: "/realestate" },

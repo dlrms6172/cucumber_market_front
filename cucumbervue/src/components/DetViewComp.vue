@@ -1,4 +1,49 @@
 <template>
+    <div>
+        <div class="item_name">{{ data.itemName }}</div>
+        <div class="member_ID">{{ data.memberId }}</div>
+        <div class="item_info">{{ data.iteminfo }}</div>
+        <div>{{ data.town }}</div>
+        <div>{{ data.price }}</div>
+        <button @click="updateData">수정</button>
+        <button @click="deleteData(index)">삭제</button>        
+    </div>
+</template>
+
+<script>
+import data from '@/data/ItemList';
+export default {
+    name: 'DetViewComp',
+    data() {
+        const index = this.$route.params.contentId
+        return {
+            data: data[index],
+            index: index
+        }
+    },
+    methods: {
+        // 특정인덱스인 값을 삭제할 때 사용함
+        deleteData() {
+            data.splice(this.index, 1)
+            this.$router.push({
+                path:"/readviewcomp"
+            })
+        },
+
+        updateData() {
+            this.$router.push({
+                name: 'createviewcomp',
+                params: {
+                    contentId: this.index
+                }
+            })
+        }
+
+    },
+}
+</script>
+
+<!-- <template>
     <HeaderComp></HeaderComp>
     <div class="body-400px">
         <div class="det-itemimage">
@@ -61,7 +106,6 @@
                     <p class="line-hei">경기도 수원시 장안구 천천동</p>
                     <p class="font-size15 fontcol-gray line-hei">관심 20 ∙ 채팅 6</p>
                 </div>
-                <!-- <img src="/images/Detail/detail2.webp" class="fam-used margin-right-20px"> -->
                 <div class="fam-2">
                     <img src="/images/Detail/detail6.webp" class="fam-used margin-right-20px">
                     <p class="line-heii">화목난로</p>
@@ -131,7 +175,7 @@ export default {
         }
     },
 }
-</script>
+</script> -->
 <style scoped>
 .body-400px {
     padding-left: 400px;

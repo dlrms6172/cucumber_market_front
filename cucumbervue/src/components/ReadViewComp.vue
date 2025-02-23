@@ -112,9 +112,10 @@
 import item from '../data/ItemList' //데이터 부분
 import FooterView from "@/components/FooterComp.vue";
 import HeaderView from "@/components/HeaderComp.vue";
+// import axios from 'axios';
 
 
-// const BASE_URL = "https://api.oi-market.kro.kr/"; axios 설정시 활성화
+const BASE_URL = "https://api.oi-market.kro.kr/";
 
 export default {
     name: 'ReadViewComp',
@@ -125,16 +126,45 @@ export default {
         } //데이터 부분
     },
     methods: {
-        // getData() {
-        //     this.$axios
-        //         .get(BASE_URL + "/item")
-        //         .then((res) => {
-        //             console.log("성공", res);
-        //         })
-        //         .catch((error) => {
-        //             console.log("실패", error);
-        //         })
-        // },    axios 설정시 활성화
+        getData() {
+            // axios.defaults.withCredentials = true;
+            // axios.get('https://api.oi-market.kro.kr/item', item)
+            // .then((res) => {
+            //     if(res.status === 200){
+            //         let accessToken = res.headers.Authorization;
+            //         let refreshAccessToken = res.headers.refresh;
+
+            //         console.log('refresh 토큰 : ', refreshAccessToken);
+            //         console.log('access 토큰 : ', accessToken);
+
+            //         axios.defaults.headers.common[
+            //             'Authorization'
+            //         ] = 'Bearer ${accessToken}';
+            //         navigator('/');
+    
+            //     }
+            // })
+            // .catch((error) => console.log(error));
+
+
+            // axios.get(`${BASE_URL}/item`,
+            // {
+            //     headers: {
+            //         authorization: `Bearer ${accessToken}`,
+            //     }
+            // }).then((result) => {
+            //     console.log("성공", result);
+            // })
+            
+            this.$axios
+                .get(BASE_URL + "/item")
+                .then((res) => {
+                    console.log("성공", res);
+                })
+                .catch((error) => {
+                    console.log("실패", error);
+                })
+        },  
         
         detail(i) {
             this.$router.push({
