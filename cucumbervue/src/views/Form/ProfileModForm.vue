@@ -5,14 +5,21 @@
     <form @submit.prevent="onSubmit">
       <!-- 프로필 이미지 업로드 -->
       <div class="profile-image">
-        <label for="profileImage">프로필 이미지</label>
-        <input type="file" id="profileImage" @change="handleFileUpload" accept="image/*">
-        <img v-if="previewImage" :src="previewImage" alt="프로필 이미지 미리보기" class="profile-preview">
+        <div class="profile-container">
+        <img :src="previewImage || defaultProfileImage" class="profile-preview">
+          <label for="profileImage" class="upload-btn">이미지 선택</label>
+          <input type="file" id="profileImage" @change="handleFileUpload" accept="image/*">
+        </div>
       </div>
 
       <div class="input-group">
         <label for="id">아이디</label>
-        <input type="text" id="id" v-model="form.id" required disabled>
+        <input type="text" id="id" v-model="form.memberId" required disabled>
+      </div>
+
+      <div class="input-group">
+        <label for="name">이름</label>
+        <input type="text" id="name" v-model="form.name" required>
       </div>
 
       <div class="input-group">
@@ -52,7 +59,8 @@ import axios from 'axios';
 const router = useRouter();
 
 const form = ref({
-  id: '',
+  memberId: '',
+  name: '',
   email: '',
   password: ''
 });
@@ -65,23 +73,28 @@ const addresses = ref({
 
 const profileImage = ref(null);
 const previewImage = ref(null);
+const defaultProfileImage = ref("/images/default-profile.png"); // 기본 프로필 이미지
+
 
 onMounted(() => {
   const userInfo = localStorage.getItem("userInfo");
   if (userInfo) {
     const user = JSON.parse(userInfo);
-    form.value.id = user.memberId || '';
-    form.value.email = user.email || '';
+    form.value.memberId = user.memberId || "";
+    form.value.name = user.name || "";
+    form.value.email = user.email || "";
   }
 
-  // Daum 주소 API 로드
   if (typeof window.daum === "undefined") {
     const script = document.createElement("script");
-    script.src = "https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js";
+    script.src =
+        "https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js";
     script.onload = () => console.log("Daum Postcode API 로드 완료");
     document.head.appendChild(script);
   }
 });
+
+
 
 const openPostcode = () => {
   if (!window.daum || !window.daum.Postcode) {
@@ -112,9 +125,8 @@ const onSubmit = async () => {
 
     // 기본 정보
     const payload = {
-      memberId: form.value.id,
-      snsId: 0,
-      name: form.value.id,
+      memberId: form.value.memberId,
+      name: form.value.name,
       email: form.value.email,
       password: form.value.password,
       regionId: 0
@@ -151,26 +163,55 @@ const onSubmit = async () => {
 }
 
 .input-group, .profile-image {
-  margin-bottom: 20px;
+  margin-bottom: 32px;
 }
 
-.input-group label, .profile-image label {
+.input-group label {
   display: block;
   margin-bottom: 5px;
 }
 
-.input-group input, .profile-image input {
+.input-group input {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
 }
+
+.profile-container {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 20px;
+  min-width: 250px;
+}
+
 
 .profile-preview {
   width: 100px;
   height: 100px;
   object-fit: cover;
   border-radius: 50%;
-  margin-top: 10px;
+  border: 1px solid #ccc;
+}
+
+/* 숨겨진 파일 입력 필드 */
+.profile-container input[type="file"] {
+  display: none;
+}
+
+.upload-btn {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+  border: none;
+}
+
+.upload-btn:hover {
+  background-color: #0056b3;
 }
 
 .submit-btn {
